@@ -69,9 +69,9 @@ Für das Lottery-Mining bieten sich USB-Miner aufgrund des geringen Stromverbrau
 Du kannst hier für das Projekt spenden und dafür sorgen, dass es weiterhin dokumentiert und ausgebaut wird:
 
 <table border=1>
-<tr><td>nearfear18@walletofsatoshi.com</td><td>lumpycarp37@walletofsatoshi.com</td></tr>
-<tr><td><img width="150" alt="qr" src="https://user-images.githubusercontent.com/108099690/197496656-55d2d453-34d4-475a-83c0-1c1aa55bb963.png" /></td><td><img src=".assets/V4V.png" alt="Donate" width="150" /></td></tr>
-<tr><td>Gunther0815</td><td>OneOfThePlebs</td></tr>
+<tr><td>lumpycarp37@walletofsatoshi.com</td><td>nearfear18@walletofsatoshi.com</td></tr>
+<tr><td><img src=".assets/V4V.png" alt="Donate" width="150" /></td><td><img width="150" alt="qr" src="https://user-images.githubusercontent.com/108099690/197496656-55d2d453-34d4-475a-83c0-1c1aa55bb963.png" /></td></tr>
+<tr><td>OneOfThePlebs</td><td>Gunther0815</td></tr>
 <!--<tr><td></td><td></td></tr>-->
 </table>
 
