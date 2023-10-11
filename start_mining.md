@@ -1,37 +1,37 @@
 # Mining Software starten
 
-> :memo: **WICHTIG:** Man muss sich in dem Ordner vom cgminer befinden damit der Befehl zum Start funktioniert. Befindet man sich nicht im Ordner, weil z.B. der Raspberry Pi neugestartet wurde, gelangt man mit folgendem Befehl in den Ordner:
+> :memo: **IMPORTANT:** You have to be in the folder of cgminer for the start command to work. If you are not in the folder, e.g. because the Raspberry Pi was restarted, you can get into the folder with the following command:
 
 ```console
 cd mining/cgminer
 ```
 
-Um den cgminer und damit das Mining zu starten, muss folgender Befehl ausgeführt werden:
+To start cgminer and thus mining, the following command must be executed:
 
-für NewPac:
+for NewPac:
 
 ```console
 sudo ./cgminer --compact --real-quiet -o stratum+tcp://solo.ckpool.org:3333 -u <BTCADRESSE> -p x --suggest-diff 32 --gekko-newpac-freq 100 --gekko-newpac-boost
 ```
 
-für CompacF:
+for CompacF:
 
 ```console
 sudo ./cgminer --compact --real-quiet -o stratum+tcp://solo.ckpool.org:3333 -u <BTCADRESSE> -p x --gekko-compacf-freq 500 --gekko-start-freq 450 --gekko-mine2 --gekko-tune2 60
 ```
 
-> `<BTCADRESSE>` muss mit der eigenen Bitcoin Adresse ausgetauscht werden
+> `<BTCADRESSE>` must be exchanged with own Bitcoin address
 
-> Die Zahl hinter `--gekko-newpac-freq` bzw. `--gekko-compacf-freq` kann erhöht werden, um den USB-Miner mit einer höheren Taktrate laufen zu lassen (dadurch erhöht sich die Hashrate aber gleichzeitig auch die Temperatur, die der Miner erreicht)
+> The number behind `--gekko-newpac-freq` or `--gekko-compacf-freq` can be increased to make the USB miner run with a higher clock rate (this increases the hashrate but at the same time also the temperature the miner reaches).
 
-Die Befehle `compact` und `real-quiet` solltet ihr am Anfang weglassen um zu sehen ob der Miner gut läuft. Ihr seht im Falle des Compac F-Miners z.B. auf welcher Frequenz er sich einpendelt. Je nach USB-Hub werden verschiedene Frequenzen nicht erreichet. 
+The commands `compact` and `real-quiet` should be omitted at the beginning to see if the miner runs well. You can see in the case of the Compac F-miner for example on which frequency it settles. Depending on the USB hub, different frequencies are not reached.
 
-> :warning: **Nochmal der Hinweis**: Compac F nie ohne Kühlung betreiben!
+> :warning: **Again the hint**: Never operate the Compac F without cooling!
 
-Kurzer Auszug der Erklärung der Befehle:
+Short excerpt of the explanation of the commands:
 
 ```
-Allgemein:
+General:
 
   --compact                   Use compact display without per device statistics
   
@@ -56,8 +56,8 @@ Compac F:
   --gekko-tune2 60
 ```
 
-> :warning: **Achtung:** Wenn das Terminal geschlossen wird, wird auch der Mining Prozess beendet!
-> Damit das Mining im Hintergrund weiter läuft, kann man `nohup` oder `screen` verwenden, mehr Inormationen dazu im Kapitel [⛏ Mining Software - Erweiterte Konfiguration](EnhancedConfiguration.md).
+> :warning: **WARNING:** When the terminal is closed, the mining process is also terminated!
+> To keep mining running in the background, you can use `nohup` or `screen`, for more information see chapter [⛏ Mining Software - Enhanced Configuration](EnhancedConfiguration.md).
 
 <!--
 ```console
@@ -93,44 +93,44 @@ Wenn man den Befehl für den cgminer im Hintergrund mehrmals gestartet hat, läu
 -->
 ---
 
-## Statistiken abrufen:
+## Retrieve statistics:
 
-### Für ckpool
+### For ckpool
 
 https://solo.ckpool.org/
-Seite aufrufen und unter `Statistics` seine BTC Adresse eingeben, die im Befehl verwendet wurde. Dort sind dann alle relevanten Daten hinterlegt.
+page and under `Statistics` enter its BTC address that was used in the command. All relevant data are then stored there.
 
-### Für Kano-Pool
+### For Kano-Pool
 
-Worker-Adresse aufrufen (ohne Anmeldung, ideal für solo-mining-pools): https://kano.is/index.php?k=work&username=<USERNAME>&api=<API-KEY> wobei `<USERNAME>` dem angemeldeten Benutzer bei Knao entspricht und `<API-KEY>` durch den im Userinterface hinterlegten Key ersetzt werden muss. Alternativ anmelden bei kano.is (für solo-Miner).
+Call worker address (without login, ideal for solo-mining-pools): https://kano.is/index.php?k=work&username=<USERNAME>&api=<API-KEY> where `<USERNAME>` corresponds to the logged in user at Knao and `<API-KEY>` must be replaced by the key stored in the user interface. Alternatively log in to kano.is (for solo miners).
   
-### Mit uns minen und Daten ganz einfach hier http://solomining.info:8080 vergleichen.
+### Mine with us and compare data easily here http://solomining.info:8080.
   
-> :bulb: **Fertig!** Glückwunsch und viel Erfolg beim Block finden! 👷
+> :bulb: **Finish!** Congratulations and good luck finding the block! 👷
 
 ---
 
-## Mehrere USB Miner einzeln ansteuern:
+## Control multiple USB miners individually:
 
-Wenn mehrere Gekko Miner gleichzeitig betrieben werden, diese aber unterschiedlich angesteuert werden sollen dann kann dies folgendermaßen gemacht werden:
+If several Gekko Miners are operated at the same time, but they are to be controlled differently, then this can be done as follows:
 
-`Bus Nummer` und `Device Nummer` herausfinden
+Find out `bus number` and `device number:
 
 ```console
 lsusb
 ```
 
-Es werden alle verbundenen Geräte aufgelistet. Der Gekko Newpac erscheint z.B. als „Future Technology Devices International, Ltd Bridge(I2C/SPI/UART/FIFO)“
+All connected devices are listed. The Gekko Newpac appears e.g. as "Future Technology Devices International, Ltd Bridge(I2C/SPI/UART/FIFO)".
 
-Durch den Zusatz `--usb BusNummer:DeviceNummer` wird ein einzelner USB Miner angesprochen:
+By adding `--usb BusNumber:DeviceNumber` a single USB Miner is addressed:
 
 ```console
 sudo ./cgminer --compact --real-quiet -o stratum+tcp://pool.ckpool.org:3333 -u <BTCADRESSE> -p x --suggest-diff 32 --usb 1:7 --gekko-newpac-freq 100
 ```
 
-Dabei müssen die zuvor gefundenen `Bus-` und `Device Nummern` eingetragen werden (Im obigen Beispiel wäre die gefundene Bus Nummer `001` und die Device Nummer `007`, daher dann `--usb 1:7`)
+The previously found `bus` and `device numbers` must be entered (in the above example the found bus number would be `001` and the device number `007`, therefore `--usb 1:7`).
 
-Möchte man die Miner verschieden ansteuern, dann sollte man zunächst durch Ausprobieren ermitteln welcher Miner welcher Device Nummer zugeordnet ist. Dazu einfach den cgminer wie in Schritt 2 beschrieben für ein bestimmtes Gerät starten und beobachten welcher Mining Stick anfängt zu blinken.
+If you want to control the miners differently, you should first determine by trial and error which miner is assigned to which device number. To do this, simply start the cgminer as described in step 2 for a specific device and observe which mining stick starts flashing.
 
 ---
 
