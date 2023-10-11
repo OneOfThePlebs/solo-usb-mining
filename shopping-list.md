@@ -1,49 +1,49 @@
-# Einkaufsliste
+# Grocery list
 
-## - Host-PC: Möglichkeiten sehr vielfältig!
+## - Host PC: Very diverse options!
 
-> * Raspberry Pi Zero mit GPIO Steckleiste- zusätzlich erforderlich: [Waveshare Ethernet/USB HUB HAT for Raspberry Pi](https://amzn.eu/d/bvdLxCD)
-> * Raspberry Pi (egal welcher; Raspberry Pi 3 oder Raspberry Pi 4 sind recht aktuelle Geräte) die RAM Größe ist dabei egal
-> * Windows oder Linux Rechner
-> * ggf. über eigenen Node - Node OS (Ciatdel) erkennt die USB Miner leider nicht. Vielleicht bekommt das ja jemand bei sich hin. Raspiblitz geht problemlos und wird auf den nachfolgenden Seiten hauptsächlich behandelt.
+> * Raspberry Pi Zero with GPIO header - additionally required: [Waveshare Ethernet/USB HUB HAT for Raspberry Pi](https://amzn.eu/d/bvdLxCD)
+> * Raspberry Pi (it doesn't matter which one; Raspberry Pi 3 or Raspberry Pi 4 are quite current devices) and the RAM size doesn't matter
+> * Windows or Linux computers
+> * possibly via your own node - Node OS (Ciatdel) unfortunately does not recognize the USB miner. Maybe someone will get it for themselves. Raspiblitz works without any problems and is mainly covered on the following pages.
 
-## - [GekkoScience NewPac 22 bis 45 GH/s](https://www.bitshopper.de/shop/sha-256-miner/usb-miner-bitcoin/newpac/)
+## - [GekkoScience NewPac 22 to 45 GH/s](https://www.bitshopper.de/shop/sha-256-miner/usb-miner-bitcoin/newpac/)
 
-> * übertaktet an die 100 GH/s
-> * der Gekko Newpac USB Miner wird nicht mehr produziert und ist bei der oben verlinkten Seite nur noch begrenzt verfügbar (ca 70 Stück; Stand Juni 2022)
-> * Es kann auch ein anderer Miner wie z.B. der Nachfolger des Newpac bestellt werden:
+> * overclocked to around 100 GH/s
+> * the Gekko Newpac USB Miner is no longer produced and is only available to a limited extent on the page linked above (approx. 70 pieces; as of June 2022)
+> * Another miner such as the successor to Newpac can also be ordered:
 
-## - [GekkoScience Compac F 200 bis 400 GH/s](https://www.bitshopper.de/shop/sha-256-miner/usb-miner-bitcoin/compac-f/)
+## - [GekkoScience Compac F 200 to 400 GH/s](https://www.bitshopper.de/shop/sha-256-miner/usb-miner-bitcoin/compac-f/)
 
-> * übertaktet an die 400 GH/s
-> * dieser ist ab Ende Juli 2022 voraussichtlich wieder lieferbar
+> * overclocked to around 400 GH/s
+> * This is expected to be available again from the end of July 2022
 
-## - Aktiver USB Hub
+## - Active USB hub
 
-> * Bitshopper: [7-Port USB Hub mit 6-Pin PCIe Anschluss](https://www.bitshopper.de/shop/zubehoer/7-port-usb-hub/) (**Referenz wenn mehrere USB-Miner betrieben werden sollen**)
-> * Amazon: [RSHTECH Aluminium USB Hub Aktiv 3.0 mit 36W (12V / 3A)](https://amzn.eu/d/7eHrU5X)
-> * Amazon: [USB Hub Aktiv 3.0 mit 24W (12V/2A) Netzteil, USB 3.0 Hub Aktiver mit 5 Ports (USB 3.0 Datenport x 4, Schnelllade Port x 1) mit Unabhängige EIN/AusSchalter und LED, Grau](https://amzn.eu/d/9QPdNLB)
+> * Bitshopper: [7-port USB hub with 6-pin PCIe connection](https://www.bitshopper.de/shop/zubehoer/7-port-usb-hub/) (**Reference if several USB miners should be operated**)
+> * Amazon: [RSHTECH Aluminum USB Hub Active 3.0 with 36W (12V / 3A)](https://amzn.eu/d/7eHrU5X)
+> * Amazon: [USB Hub Active 3.0 with 24W (12V/2A) power supply, USB 3.0 Hub Active with 5 ports (USB 3.0 data port x 4, fast charging port x 1) with independent on/off switch and LED, gray](https: //amzn.eu/d/9QPdNLB)
 
 
-## - Kühlung des Miners 
+## - Cooling the miner
 
-> * zwingend notwendig ab einer Taktfrequenz von 100 MHz! Der Compac F Miner muss immer mit einer Kühlung verwendet werden!
-> * Amazon: [ARCTIC Breeze Mobile - 92 mm USB-Ventilator mit flexiblem Hals](https://amzn.eu/d/hDWkNy5)
-> * Gehäuse für 3D-Druck: [Thingiverse](https://www.thingiverse.com/thing:4947599) - PLA, PETG,... (Befestigung mit Kabelbinder)
-> * Gehäuse für 3D-Druck: [Thingiverse](https://www.thingiverse.com/thing:2694546) - PETG o.ä. verwenden! PLA wird schneller weich und könnte abrutschen!
-> * ggfs. [größere Lüfter für Gehäuse](https://www.digitalo.de/products/1120184/BeQuiet-Pure-Wings-2-PWM-PC-Gehaeuse-Luefter-Schwarz-B-x-H-x-T-120-x-120-x-25mm.html)
-> * ggfs. [Lüftersteuerung](https://www.ejoker.de/lamptron-cp120-v2-pci-blende-lueftersteuerung-schwarz/14-2933639)
+> * absolutely necessary from a clock frequency of 100 MHz! The Compac F Miner must always be used with cooling!
+> * Amazon: [ARCTIC Breeze Mobile - 92 mm USB fan with flexible neck](https://amzn.eu/d/hDWkNy5)
+> * Enclosure for 3D printing: [Thingiverse](https://www.thingiverse.com/thing:4947599) - PLA, PETG,... (attached with cable ties)
+> * Housing for 3D printing: [Thingiverse](https://www.thingiverse.com/thing:2694546) - use PETG or similar! PLA softens more quickly and could slip off!
+> * if necessary [larger fans for cases](https://www.digitalo.de/products/1120184/BeQuiet-Pure-Wings-2-PWM-PC-Gehaeuse-Luefter-Schwarz-B-x-H-x-D-120-x-120 -x-25mm.html)
+> * if necessary [fan control](https://www.ejoker.de/lamptron-cp120-v2-pci-blende-luefterkontrolle-schwarz/14-2933639)
 
-## Sonstiges
+## Miscellaneous
 
-> * ggf. LAN-Kabel
-> * ggf. Netzteil für Raspberry (kann auch über USB Hub mit Strom versorgt werden)
-> * ggf. SD-Karte (mind. 8 GB empfohlen)
-> * ggf. [Kompaktes Gehäuse](https://www.playox.de/sharkoon-qb-one-4765453)
-> * ggf. [Netzteil für Gehäuse](https://www.voelkner.de/products/1533634/BeQuiet-System-Power-9CM-PC-Netzteil-400W-ATX-80PLUS-Bronze.html)
-> * ggf. [Adapterkabel](https://www.amazon.de/dp/B07RQZCM3W/?coliid=I35TUA7ET1AAS9&colid=2T41OJ30CGSGL&ref_=lv_ov_lig_dp_it&th=1)
-> * ggf. [Infrarot Thermometer](https://amzn.eu/d/eGU0y0o)
-> * ggf. [USB Spannungsprüfer Amperemeter Messgerät 5.1A 30V](https://amzn.eu/d/chAaRMf)
+> * LAN cable if necessary
+> * If necessary, power supply for Raspberry (can also be powered via USB hub)
+> * SD card if necessary (at least 8 GB recommended)
+> * if necessary [compact housing](https://www.playox.de/sharkoon-qb-one-4765453)
+> * if necessary [power supply for case](https://www.voelkner.de/products/1533634/BeQuiet-System-Power-9CM-PC-Netzteil-400W-ATX-80PLUS-Bronze.html)
+> * if necessary [adapter cable](https://www.amazon.de/dp/B07RQZCM3W/?coliid=I35TUA7ET1AAS9&colid=2T41OJ30CGSGL&ref_=lv_ov_lig_dp_it&th=1)
+> * if necessary [infrared thermometer](https://amzn.eu/d/eGU0y0o)
+> * if necessary [USB voltage tester ammeter measuring device 5.1A 30V](https://amzn.eu/d/chAaRMf)
 
 ---
 

@@ -1,20 +1,20 @@
 # cgminer JAVA API Skripte
 
-Als Ergänzung zur bereits bestehenden Abstraktionebene der Java API, können weitere Shell- oder Pythonskripte dienen. Weitere Beispiele sollen folgen, gerne können hier auch nützliche Skripte aus der Community geteilt werden.
+As a supplement to the already existing abstraction layer of the Java API, further shell or Python scripts can serve. More examples will follow, feel free to share useful scripts from the community here.
 
-## Skript zum Ändern der Frequenz
+## Script to change the frequency
 
-Wenn man aus welchen Gründen auch immer häufig die Frequenz seines USB-Miners ändert, bietet es sich an diesen Schritt zu vereinfachen, da (für mich) die Syntax zum Verändern der Frequenz schwer merkbar ist, ich den Befehl doppelt ausführen muss (für `target` und `frequenz`) und gegebenfalls vorher in der Bash-Historie nachsehen muss.
+If you often change the frequency of your USB miner for whatever reason, it makes sense to simplify this step, because (for me) the syntax to change the frequency is hard to remember, I have to execute the command twice (for `target` and `frequency`) and if necessary I have to check the bash history before.
 
-Das folgende Shellscrip soll genau dies tun.
+The following shellscript should do exactly this.
 
-Dafür muss ein Shellscript im Ordner der Wahl angelegt werden, z.B. in '/home/admin/Mining':
+For this a shellscript has to be created in the folder of choice, e.g. in '/home/admin/Mining':
 
 ```console
 sudo nano /home/admin/Mining/cgminer-api.sh
 ```
 
-und folgender Inhalt geschrieben werden:
+and the following content can be written:
 
 ```bash
 #!/bin/bash
@@ -27,21 +27,21 @@ java API "ascset|$device,target,$target"
 java API "ascset|$device,freq,$freq"
 ```
 
-Für die Ausführung müssen nun noch die Rechte des Skriptes angepasst werden, das geht mit dem Befehl `chmod`:
+For the execution the rights of the script must be adapted now, this is possible with the command `chmod`:
 
 ```console
 sudo chmod 755 /home/admin/Mining/cgminer-api.sh
 ```
 
-Nun kann das Skript mit Übergabeparametern gestartet werden (der Pfad kann ggf. weggelassen werden):
+Now the script can be started with passing parameters (the path can be omitted if necessary):
 
 ```console
 /home/admin/Mining/cgminer-api.sh 0 450 470
 ```
 
-> :memo: **Zur Erklärung:** Der Übergabeparameter `0` entspricht dem `$1` des Skripts und wird der Variablen `device` zugewiesen. Dieser Wert ist in der GUI des Miners zu prüfen bzw. kann er auch über die API abgefragt werden (z.B. mit `java API devs` wird die ID angezeigt `[ID] => 0`, und entspricht der zu verwendenden Nummer). Ebenso werden die Werte `450` und `470` nach dem gleichen Mechanismus den Variablen `freq` und `target` zugewiesen. Das Skript setzt diese Variablen dann lediglich bei den beiden aufeinander folgenden Java API-Aufrufen ein.
+> :memo: **For explanation:** The passing parameter `0` corresponds to `$1` of the script and is assigned to the variable `device`. This value has to be checked in the GUI of the miner or it can also be queried via the API (e.g. with `java API devs` the ID is displayed `[ID] => 0`, and corresponds to the number to be used). Similarly, the values `450` and `470` are assigned to the variables `freq` and `target` using the same mechanism. The script then simply sets these variables on the two consecutive Java API calls.
 
-Die Ausführung wird mit der Rückgabe des Status quittiert:
+The execution is acknowledged with the return of the status:
 
 ```console
 Attempting to send 'ascset|0,target,470' to 127.0.0.1:4028
@@ -68,10 +68,10 @@ Answer='STATUS=S,When=1674301922,Code=119,Msg=ASC 0 set OK,Description=cgminer 4
 
 ---
 
-## Skript zum Abfragen diverser Stati
+## Script for querying various statuses
 
 > ```diff 
-> - Skript und Beschreibung folgen
+> - Script and description follow
 > ```
 
 ---

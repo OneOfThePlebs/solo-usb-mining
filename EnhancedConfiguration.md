@@ -1,24 +1,24 @@
-# ⛏ Konfigurationstipps
+# ⛏ Configuration tips
 
-Diese Seite beschreibt mögliche Konfigurationen von CGMIner auf einem Raspbery Pi
+This page describes possible configurations of CGMIner on a Raspbery Pi.
 
 ## CGMiner in debug mode 
 
-Um möglichst detaillierte Informationen vor allem beim erstmaligen Setup zu bekommen, bietet es sich an CGMiner wie folgt zu starten:
+To get the most detailed information possible, especially during the initial setup, it is recommended to start CGMiner as follows:
 
 ```console
 sudo ./cgminer -o stratum+tcp://solo.ckpool.org:3333 -u <BITCOINADDRESS>.<OPTIONAL_NAME> -p x --gekko-compacf-freq 500 --gekko-start-freq 200 --gekko-mine2 --gekko-tune2 60
 ```
 
-In diesem Modus kann man übersichtlich die Leistung der angeschlossenen Miner beobachten, das Hotplugging-Verhalten untersuchen aber auch einfach nur Einstellungen on-the-fly vornehmen.
+In this mode, you can clearly observe the performance of the connected miners, examine the hotplugging behavior, but also simply make settings on-the-fly.
 
 ---
 
-## CGMiner im Hintergrund...
+## CGMiner in the background...
 
-### ...mit `nohup &`
+### ...with `nohup &`
 
-Der Betrieb im Hintergrund ist notwendig, wenn man nicht permanent eine remote Verbindung via SSH offen halten kann oder will, z.B. beim Betrieb von CGMiner auf einem Raspberry Pi. Der cgminer-Dienst kann einfach mit `nohup` im Hintergrund gestartet werden:
+Running in the background is necessary if you can't or don't want to keep a remote connection via SSH open permanently, e.g. when running CGMiner on a Raspberry Pi. The cgminer service can simply be started in the background with `nohup`:
 
 ```console
 nohup sudo ./cgminer --compact --real-quiet -o stratum+tcp://solo.ckpool.org:3333 -u <BITCOINADDRESS>.<OPTIONAL_NAME> -p x --gekko-compacf-freq 500 --gekko-start-freq 200 --gekko-mine2 --gekko-tune2 60 &
@@ -26,19 +26,19 @@ nohup sudo ./cgminer --compact --real-quiet -o stratum+tcp://solo.ckpool.org:333
 
 Man beachte hier die Optionen `--compact` und `--real-quiet`. Diese Optionen verringern das zu loggende Datenvolumen auf ein Minimum.
 
-Man beachte hierbei das abschliessende `&`. Der Prozess läuft nun im Hintergrund und leitet seine Ausgabe in die Datei `/home/admin/nohup.out` um. Diese kann mit `cat` in der Konsole ausgegeben werden:
+Note also the closing `&`. The process now runs in the background and redirects its output to the file `/home/admin/nohup.out`. This can be printed to the console with `cat`:
 
 ```console
 cat /home/admin/nohup.out
 ```
 
-Um den Prozess zu beenden, muss die Prozess-ID mittels `kill` terminiert werden. Dazu sucht man zuerst die Prozess-ID:
+To terminate the process, the process ID must be terminated using `kill`. To do this, first find the process ID:
 
 ```console
 ps aux | grep cgminer
 ```
 
-Dies zeigt entsprechende Prozess-IDs von cgminer an und können wie folgt beendet werden:
+This displays corresponding process IDs of cgminer and can be terminated as follows:
 
 ```console
 sudo kill <PROZESSID>
@@ -46,9 +46,9 @@ sudo kill <PROZESSID>
 
 ---
 
-### ...mit `screen` (der elegantere Ansatz)
+### ...with `screen` (the more elegant approach)
 
-zuerst muss screen installiert werden, wie zuvor auch mittels apt-get:
+first screen must be installed, as before using apt-get:
 
 ```console
 sudo apt-get update
@@ -58,13 +58,13 @@ sudo apt-get upgrade -y
 sudo apt-get install screen
 ```
 
-Zuerst generieren wir ein ausführbares Shellskript zum Start des Miners mit einem Editor wie nano (`<USER>` mit namen des erzeugenden Users ersetzen):
+Then we generate an executable shell script to start the miner with an editor like nano (replace `<USER>` with name of the creating user):
 
 ```console
 sudo nano -w /home/<USER>/cgminer/cgminer.sh
 ```
 
-Der Inhalt des Skriptes ist der Startbefehl für die Mining-Software cgminer (`<USER>` einsetzen):
+The content of the script is the start command for the mining software cgminer (insert `<USER>`):
 
 ```console
 #!/bin/bash
@@ -73,53 +73,53 @@ cd /home/<USER>/cgminer
 sudo ./cgminer -c /root/.cgminer/cgminer.conf 2> "run-`date +%Y%m%d%H%M%S`.log"
 ```
 
-Hier wurde der gekürzte Startbefehl für cgminer verwendet, die Konfiguration wird aus der Konfigurationsdatei `cgminer.conf` gelesen. Der Befehl `2> "run-'date +%Y%m%d%H%M%S'.log"` lenkt die Ausgabe, wenn der Prozess mit screen im Hintergrund läuft in eine log-Datei um, welche sich auch im cgminer-Verzeichnis befindet.
+Here the abbreviated start command for cgminer was used, the configuration is read from the configuration file `cgminer.conf`. The command `2> "run-'date +%Y%m%d%H%M%S'.log"` redirects the output when the process is running with screen in the background to a log file, which is also located in the cgminer directory.
 
-Nun muss nur noch das Skript ausführbar gemacht werden (`<USER>` einsetzen):
+Now you just have to make the script executable (insert `<USER>`):
 
 ```console
 sudo chmod +x /home/<USER>/cgminer/cgminer.sh
 ```
 
-Um den Mining-Prozess im Hintergrund zu starten und somit auch am Laufen zu halten wenn die SSH-Session beendet wird, rufen wir nun das Shellskript mit dem Startbefehl des Miners mittels `screen` auf (`<USER>` einsetzen):
+To start the mining process in the background and thus keep it running when the SSH session is terminated, we now call the shell script with the miner's start command using `screen` (insert `<USER>`):
 
 ```console
 sudo screen -dm -S miner /home/<USER>/cgminer/cgminer.sh
 ```
 
-Zur Überprüfung des im Hintergrund nun laufenden Screens kann folgender Befehl verwendet werden:
+The following command can be used to check the screen that is now running in the background:
 
 ```console
 sudo screen -ls
 ```
 
-Der Screen kann auch in den Vordergrund gebracht und angezeigt werden:
+The screen can also be brought to the foreground and displayed:
 
 ```console
 sudo screen -r miner
 ```
 
-Die Angabe von `miner` ist bei einem screen nicht notwendig.
+The specification of `miner` is not necessary for a screen.
 
-Mittels `<CTRL><A>` und anschließendem `<CTRL><D>` kann der Prozess wieder in den Hintergrund gebracht werden. 
+By means of `<CTRL><A>` and then `<CTRL><D>` the process can be brought back into the background. 
 
 ---
 
-### Automatischer Start des Miners nach einem Reboot 
+### Automatic start of the miner after a reboot 
 
-Damit die Mining-Software nach jedem Neustart automatisch wieder anläuft, können wir den obigen screen-Befehl auch in die `rc.local` mit aufnehmen. Diese editieren wir mit nano:
+To make the mining software restart automatically after each reboot, we can also include the above screen command in `rc.local`. We edit this with nano:
 
 ```console
 sudo nano -w /etc/rc.local
 ``` 
 
-Vor dem `Exit 0` fügen wir folgende Codezeile ein (`<USER>` einsetzen):
+Before `Exit 0` we insert the following line of code (insert `<USER>`):
 
 ```console
 sudo su - -c "screen -dm -S miner /home/<USER>/cgminer/cgminer.sh"
 ```
 
-Mittels `-c` wird dem Superuser ein Kommando mitgegeben, in unserem Fall der Aufruf des Miners via Shellskript. Die `rc.local` sieht dann aus wie folgt (`<USER>` einsetzen):
+Using `-c` a command is given to the superuser, in our case the call of the miner via shell script. The `rc.local` then looks like this (insert `<USER>`):
 
 ```console
 #!/bin/sh -e
@@ -146,27 +146,27 @@ sudo su - -c "screen -dm -S miner /home/<USER>/cgminer/cgminer.sh"
 exit 0
 ```
 
-Zur Überprüfung nun lediglich neustarten, im Falle von Raspiblitz unbedingt per Software-Befehl, so dass bitcoind und lnd sauber gestoppt werden: 
+To check now just restart, in case of Raspiblitz necessarily by software command, so that bitcoind and lnd are stopped cleanly: 
 
  ```console
 restart
 ```
 
-Ob es funktioniert hat kann wieder mittels `sudo screen -r` geprüft werden.
+Whether it worked can be checked again with `sudo screen -r`.
 
 ---
 
-## cgminer mit mehreren Pools betreiben
+## run cgminer with multiple pools
 
-Es bietet sich an auf mehreren Hochzeiten zu tanzen, um z.B. 70% der Zeit in einen Pool zu minen (Solo-Pool-Mining), 30% aber auf eigene Faust zu minen (echtes Solomining). Dies hat den Vorteil, dass man im Falle eines Blockfundes des Pools seinen Beitrag bekommt, also entweder den Anteil der geleisteten Shares wenn jemand anderes einen Block findet ODER die vereinbarte Blockbelohnung des Solo-Mining-Pools wenn man den Block selbst findet, gleichzeitig aber auch sein Glück ausreizt um ganz alleine einen Block zu finden. Das muss jeder für sich selbst herausfinden, die Anleitung dazu gibt es trotzdem hier.
+It is a good idea to dance on several weddings, e.g. to mine 70% of the time in a pool (solo pool mining), but to mine 30% on your own (real solo mining). This has the advantage that in case of a block find of the pool you get your contribution, so either the share of the paid shares if someone else finds a block OR the agreed block reward of the solo mining pool if you find the block yourself, but at the same time you push your luck to find a block all by yourself. Everyone has to figure that out for themselves, but the instructions are here anyway.
 
-Anpassen der Konfigurationsdatei `/root/.cgminer/cgminer.conf` um die Pools und Quotas bekannt zu geben:
+Modify the configuration file `/root/.cgminer/cgminer.conf` to announce the pools and quotas:
 
 ```console
 sudo nano -w /root/.cgminer/cgminer.conf
 ```
 
-Eintragen der Pools ähnlich meinem Beispiel:
+Entering the pools similar to my example:
 
 ```console
 {
@@ -189,9 +189,9 @@ Eintragen der Pools ähnlich meinem Beispiel:
 }
 ```
 
-Wichtig hierbei die quotas (in meinem Beispiel 70% und 30%), aber auch die Option `load-balance` auf `true` zu setzen.
+It is important to set the quotas (in my example 70% and 30%), but also the option `load-balance` to `true`.
 
-Das Verwenden der Config-Datei hat den weiteren Charme, dass man nicht mehr sämtliche Parameter an den Miner übergeben muss, es reicht lediglich `sudo ./cgminer` aufzurufen und die weitere Parametrierung findet über die onfigurationsdatei statt. Durch die Option `sudo ./cgminer -c /root/.cgminer/cgminer.conf` önnen außerdem unterschiedliche Konfigurationen geladen werden.
+The use of the config file has the further charm that one does not have to pass all parameters to the miner, it is sufficient to call `sudo ./cgminer` and the further parameterization takes place over the onfigurationsdatei. The option `sudo ./cgminer -c /root/.cgminer/cgminer.conf` can also be used to load different configurations.
 
 ---
 

@@ -1,10 +1,10 @@
-# Galerie - "When Plebs Go Wild"
+# Gallery - "When Plebs Go Wild"
 
 #### [❄ Troubleshooting](/troubleshooting.md)  ᐊ  previous | next  ᐅ  [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md)
 
 ---
 
-> :memo: Gerne könnt Ihr Eure Bilder zur Veröffentlichung über die Telegramm-Gruppe einreichen!
+> :memo: Feel free to submit your pictures for publication via the Telegram group!
 
 <img src=".assets/Galerie_001.jpg" alt="" width="50%" />
 

@@ -1,27 +1,27 @@
 # ☀ Single USB-Miner
 
-## Ein erster Einstieg in USB-Mining.
+## A first introduction to USB mining.
 
-Hier wird die Basis zum Mining geschaffen mit Fokus auf die Hardware.
+The basis for mining is created here with a focus on the hardware.
 
-Zur Ermittlung der Leistungsfähigkeit des USB-Miners in der jeweiligen Hardware-Konfiguration wird das Auto-tuning der cgminer-Software verwendet:
+The auto-tuning of the cgminer software is used to determine the performance of the USB miner in the respective hardware configuration:
 
 ```console
-sudo ./cgminer --compact --real-quiet -o stratum+tcp://solo.ckpool.org:3333 -u <BITCOINADDRESS>.<OPTIONAL_NAME> -p x --gekko-compacf-freq 500 --gekko-start-freq 200 --gekko-mine2 --gekko-tune2 60
+sudo ./cgminer --compact --real-quiet -o stratum+tcp://solo.ckpool.org:3333 -u <BITCOINADDRESS>.<OPTIONAL_NAME> -p x --gekko-compacf-freq 500 --gekko- start-freq 200 --gekko-mine2 --gekko-tune2 60
 ```
 
-Die Start- und Endfrequenz kann man jederzeit ändern, sobald man ein Gefühl dafür hat was die eigene Hardware leistet. Ein Standard-USB-Hub kann sich durchaus bei 280MHz einpendeln (Nicht genug Strom vergfügbar), bei geschickt gewählter Hardware sind auch deutlich höhere Taktraten möglich.
+You can change the start and end frequencies at any time once you have a feel for what your hardware is capable of. A standard USB hub can definitely settle at 280MHz (not enough power available); with cleverly chosen hardware, significantly higher clock speeds are also possible.
 
-Der USB-Miner nimmt sich die Leistung die er benötigt für die eingestellte Taktrate. Durch das Auto-tuning können wir die Taktrate in MHz so lange erhöhen, bis sich der Algorithmus von cgminer auf eine stabile Taktrate einpendelt, hier sind das ca. 530MHz.
+The USB miner uses the power it needs for the set clock speed. Through auto-tuning we can increase the clock rate in MHz until the cgminer algorithm settles on a stable clock rate, here that is approx. 530MHz.
 
 <figure><img src="broken-reference" alt=""><figcaption><p>Wird durch anderes Bild ersetzt.</p></figcaption></figure>
 
-Die Leistungsfähigkeit bei z.B. 330MHz sind in meinem Fall 230GH/s (Gigahashes pro Sekunde), bei 530MHz schafft mein Miner satte 355GH/s.
+In my case, the performance at 330MHz is 230GH/s (gigahashes per second), at 530MHz my miner achieves a whopping 355GH/s.
 
-Bei angestecktem USB-Tester sehen wir die angelegte Spannung (in Volt), den verwendeten Strom (in Ampere) und die daraus resultierende elektrische Leistung (in Watt):
+When the USB tester is plugged in, we see the applied voltage (in volts), the current used (in amps) and the resulting electrical power (in watts):
 
 <figure><img src=".assets/IMG-1254.jpg" alt="" width="400" /><figcaption><p>USB Safety Tester</p></figcaption></figure>
 
-Aktive (mit Netzteil) Standard-USB-Hubs mit einem Gekkoscience Compaq F können hierbei extrem unterschiedlich sein. Ich habe Taktraten von 270MHz bis 545MHz gesehen, je nach verwendetem USB-Hub.
+Active (with power supply) standard USB hubs with a Gekkoscience Compaq F can be extremely different. I've seen clock speeds from 270MHz to 545MHz depending on the USB hub used.
 
-> :warning: **ACHTUNG**: höhere Taktraten erfordern aktive Kühlung (siehe dazu auch Kapitel [uebertakten.md](uebertakten.md "mention")).
+> :warning: **WAARNING**: Higher clock speeds require active cooling (see also chapter [uebertakten.md](uebertakten.md "mention")).

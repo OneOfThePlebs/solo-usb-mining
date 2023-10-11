@@ -1,18 +1,18 @@
 # cgminer JAVA API
 
-cgminer erlaubt das Abrufen von Statistiken und Parametern via API (`A`pplication `P`rogramming `I`nterface oder deutsch Anwendungsschnittstelle), z.B. Bestshare, die Anzahl gefundener Blöcke, aber auch das Setzen von Systemparametern während des Betriebes von außen, z.B. die Frequenz (MHz) oder den USB-waitfactor. Des Weiteren kann das Mining-Programm ferngesteuert werden. Aber eins nach dem anderen... 
+cgminer allows the retrieval of statistics and parameters via API (`A`pplication `P`rogramming `I`nterface or german application interface), e.g. bestshare, the number of found blocks, but also the setting of system parameters during operation from outside, e.g. the frequency (MHz) or the USB-waitfactor. Furthermore, the mining program can be controlled remotely. But one thing at a time... 
 
-## Installation der Java Runtime Environment (JRE)
+## Installation of the Java Runtime Environment (JRE)
 
-Für die Benutzung der API muss die Java Laufzeitumgebung installiert werden. Wir beziehen uns hier auf eine Linux-Umgebung auf einem Raspberry Pi 4. 
+To use the API, the Java runtime environment must be installed. We refer here to a Linux environment on a Raspberry Pi 4. 
 
-Zuerst muss die passende Laufzeitumgebung für das System gesucht werden, das macht man mittels `apt` über den folgenden Befehl:
+First you have to search for the appropriate runtime environment for the system, this is done with `apt` via the following command:
 
 ```console
 apt-cache search jre
 ```
 
-Was zu folgendem Output in der Konsole führt:
+Which leads to the following output in the console:
 
 ```console
 libanimal-sniffer-java - JDK/API verification tools
@@ -45,27 +45,27 @@ libsaaj-java - SOAP with Attachment API for Java
 java-package - Utility for creating Java Debian packages
 ```
 
-Nun haben wir die richtige Laufzeitumgebung ermittelt (`openjdk-11-jre-headless`) und installieren diese wiederum mittels `apt` (Ich habe während der Installtion `openjdk-11-jre-headless` verwendet, `openjdk-17-jre-headless` sollte auch ohne weiteres möglich sein.):
+Now we have determined the correct runtime environment (`openjdk-11-jre-headless`) and install it again using `apt` (I used `openjdk-11-jre-headless` during the install, `openjdk-17-jre-headless` should also be possible without any problems):
 
 ```console
 apt-get install openjdk-11-jre-headless
 ```
 
-Nun sind wir bereit für die Konfiguration der Java API für cgminer. 
+Now we are ready to configure the Java API for cgminer. 
 
-## Konfiguration
+## Configuration
 
-Um die API benutzen zu können müssen wir cgminer mitteilen, dass Anfragen von außen (entweder vom Raspberry Pi selbst via 'localhost' oder aus einem privaten Adressbereich zu Hause (subnet xxx.xxx.xxx.0/24) akzeptiert werden und die Software Informationen über den Miningprozess nach außen mitteilt). Die Konfiguration kann entweder beim Start von cgminer als Parameter mitgegeben werden:
+To use the API we need to tell cgminer to accept requests from outside (either from the Raspberry Pi itself via 'localhost' or from a private address range at home (subnet xxx.xxx.xxx.0/24) and to communicate information about the mining process to the outside). The configuration can either be passed as a parameter when starting cgminer:
 
 ```console
 sudo ./cgminer_4.12.1/cgminer --api-listen --api-allow "W:192.168.2.0/24,W:127.0.0.1"
 ```
 
-Das vorangestellte `W` bedeutet dass auch Befehle mit Schreibzugriff auf den Miner von dieser Adresse entgegengenommen werden dürfen.
+The prefix `W` means that commands with write access to the miner may also be accepted from this address.
 
-In meinem Beispiel erlaube ich Anfragen vom Raspi selbst aus via localhost `127.0.0.1` und aus dem privaten Adressbereich meines Subnetzes `192.168.168.xxx`.
+In my example I allow requests from the Raspi itself via localhost `127.0.0.1` and from the private address range of my subnet `192.168.168.xxx`.
 
-Diese Einstellung kann auch in der Konfigurationsdatei `cgminer.conf` gemacht werden:
+This setting can also be made in the configuration file `cgminer.conf`:
 
 ```console
 ...
@@ -81,15 +81,15 @@ Diese Einstellung kann auch in der Konfigurationsdatei `cgminer.conf` gemacht we
 ...
 ```
 
-> :warning: `"api-host" : "0.0.0.0",` ist eine wildcard und erlaubt API-Befehle von überall her von wo die `API.class` aufgerufen wird. 
+> :warning: `"api-host" : "0.0.0.0",` is a wildcard and allows API commands from anywhere the `API.class` is called. 
 
-## Beschreibung der API
+## API description
 
-Um API-Befehle ausführen zu können, muss man entweder den Pfad von cgminer mit angeben oder sich im Pfade des Programmes befinden. Dies verdeutliche ich beim ersten Befehl `java API estats` nachfolgend.
+To be able to execute API commands, one must either specify the path of cgminer with or be in the path of the program. I illustrate this with the first command `java API estats` below.
 
-Alle Rückemdlungen der API sind im `JSON` format, mit der ersten Sektion als Status und mit der zweiten Sektion die angeforderten Werte beinhaltend.
+All API returns are in `JSON` format, with the first section as status and the second section containing the requested values.
 
-Der Status hat folgendes Format:
+The status has the following format:
 
 ```console
 STATUS=X,When=NNN,Code=N,Msg=string,Description=string|
@@ -114,9 +114,9 @@ Description=string
 	This defaults to the cgminer version but is the value of --api-description if it was specified at runtime.
 ```
 
-## Übersicht der gängigsten und mit cgminer 4.12.1 lauffähigen Befehle
+## Overview of the most common commands executable with cgminer 4.12.1
 
-> :warning: Nicht alle Befehle wurden getestet. Manche Befehle funktionieren eingeschränkt, z.B. `zero` setzt zwar die Statistiken zurück, verändert aber die Anzeige in der Text-basierten GUI von cgminer 4.12.1 in dem z.B. Frequenz und Target nicht mehr angezeigt werden. Also Vorsicht, alles auf eigene Gefahr!! 
+> :warning: Not all commands have been tested. Some commands work limited, e.g. `zero` resets the statistics, but changes the display in the text-based GUI of cgminer 4.12.1 in that e.g. frequency and target are no longer displayed. So be careful, everything at your own risk!!! 
 
  Request   |    Reply Section | Details
  -------   |    ------------- | -------
@@ -155,7 +155,7 @@ Description=string
  lcd       |    LCD        | An all-in-one short status summary of the miner e.g. Elapsed,GHS av,GHS 5m,GHS 5s,Temp, Last Share Difficulty,Last Share Time, Best Share,Last Valid Work,Found Blocks, Pool,User
  lockstats (\*) 		   |none    | There is no reply section just the STATUS section<br>stating the results of the request<br>A warning reply means lock stats are not compiled into cgminer<br>The API writes all the lock stats to stderr
  
-Im Falle von komplexen Befehlen wie `ascset` müssen verschachtelte Übergabeparameter in Anführungszeichen gesetzt werden:
+In case of complex commands like `ascset` nested passing parameters must be enclosed in quotes:
 
 ```console
 java API "asc|0"
@@ -165,7 +165,7 @@ java API "asc|0"
 ~/Mining/cgminer_4.12.1/java API "ascset|0,freq,400"
 ```
 
-## Beispiele
+## Examples
 
 ### java API estats
 
@@ -173,7 +173,7 @@ java API "asc|0"
 ~/Mining/cgminer_4.12.1/java API estats
 ```
 
-ergibt folgenden Output:
+results in the following output:
 
 ```console
 [STATUS] =>
@@ -338,7 +338,7 @@ ergibt folgenden Output:
 java API summary
 ```
 
-oder `java api` ohne Parameter ergibt folgenden Output:
+or `java api` without parameters gives the following output:
 
 ```console
 [STATUS] =>
@@ -384,13 +384,13 @@ oder `java api` ohne Parameter ergibt folgenden Output:
 )
 ```
 
-### Setze ASIC-Frequenz und ASIC-Target
+### Set ASIC frequency and ASIC target
 
 ```console
 java API "ascset|0,freq,400"
 ```
 
-erzeugt folgenden Status:
+generates the following status:
 
 
 ```console
@@ -408,53 +408,53 @@ erzeugt folgenden Status:
 java API "ascset|0,freq,400"
 ```
 
-erzeugt ein ähnliches Status-Fenster.
+creates a similar status window.
 
-## Java API remote verwenden
+## Use Java API remotely
 
-### API-Aufruf vom Host-PC
+### API call from host PC
 
-Man hat nicht immer Lust sich auf den Raspberry Pi einzuloggen und dort Skripte auszuführen, wenn man diese auch bequem auf dem Host-Rechner laufen lassen kann. Diese Methodik wurde und Linux und OSX ausprobiert, wo jeweils eine Bash zur Verfügung steht und Shell-Scripting sehr einfach mit Boardmitteln zulässt. Das Prinzip sollte unter Windows ähnlich sein, jedoch müssen entsprechende Ableitungen nach Windows selbst gezogen werden.
+You don't always want to log in to the Raspberry Pi and run scripts there when you can conveniently run them on the host machine. This method was tried on Linux and OSX, where a bash is available and shell scripting is very easy with board resources. The principle should be similar under Windows, but appropriate derivations must be drawn to Windows itself.
 
-> :memo: **Notiz:** im Kapitel [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md) stehen weitere Details zur erleichterten Bedienung von SSH (z.B. Starten von SSH ohne Passworteingabe).
+> :memo: **Note:** in the chapter [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md) are more details about the simplified operation of SSH (e.g. starting SSH without entering a password).
 
-Um die Java API von extern zu verwenden, muss zunächst die Klassenbibliothek `API.class` aus dem Verzeichnis von cgminer auf den aufrufenden PC übertragen werden. In Beispiel hier soll die Datei `API.class` vom Raspberry Pi (Raspiblitz) auf einen Linux Desktop Rechner kopiert werden. Unter Linux kann hierfür scp (`secure copy`) verwendet werden, dies kann in beide Richtungen geschehen bzw. von beiden Systemen aus aufgerufen werden: also entweder vom Raspberry Pi aus `scp <Pfad>/API.class <USER>@<HOSTNAME>:<PFAD>` oder vom Host-PC aus wie im Beispiel unten `scp <USER>@<HOSTNAME>:<PFAD>/API.class <PFAD>`.
+To use the Java API externally, the class library `API.class` must first be transferred from the directory of cgminer to the calling PC. In this example the file `API.class` should be copied from the Raspberry Pi (Raspiblitz) to a Linux desktop computer. Under Linux scp (`secure copy`) can be used for this, this can be done in both directions or called from both systems: so either from the Raspberry Pi `scp <path>/API.class <USER>@<HOSTNAME>:<PFAD>` or from the host PC as in the example below `scp <USER>@<HOSTNAME>:<PFAD>/API.class <PFAD>`.
 
-Dazu wechseln wir in ein gewünschtes Verzeichnis auf dem Host-PC:
+To do this, we change to a desired directory on the host PC:
 
 ```console
 cd /home/<USER>/Scripts
 ```
 
-und starten den Kopiervorgang:
+and start the copy process:
 
 ```console
 scp admin@raspberrypi.local:/home/admin/Mining/cgminer_4.12.1/API.class .
 ```
 
-Der abschliessende `.` bedeutet im Kontext von `scp <QUELLE> <ZIEL>` dass das Ziel der gegenwärtige Pfad ist. Nach dem eingeben des Passwortes für den Zugriff auf den Raspi beginnt der Download und die Datei befindet sich im gewählten Ordner.
+The final `.` means in the context of `scp <SOURCE> <TARGET>` that the target is the current path. After entering the password to access the Raspi, the download starts and the file is located in the selected folder.
 
-Beim Aufruf von cgminer muss man nun den Parameter --api-host "0.0.0.0" hinzufügen oder in der Konfigurations-Datei cgminer.conf die Variable `API-host = "127.0.0.1"` auf `API-host = "0.0.0.0"` ändern, so dass Anfragen an cgminer auch von einem externen API-Host zugelassen werden (`0.0.0.0` ist hier eine wild card).
+When calling cgminer you now have to add the parameter --api-host "0.0.0.0" or change the variable `API-host = "127.0.0.1"` to `API-host = "0.0.0.0"` in the configuration file cgminer.conf, so that requests to cgminer are also allowed from an external API host (`0.0.0.0` is a wild card here).
 
-Nun kann man vom Host-PC aus die Java API bedienen nach dieser Syntax (ähnlich der Syntax auf dem Raspberry selbst):
+Now you can operate the Java API from the host PC according to this syntax (similar to the syntax on the Raspberry itself):
 
 ```console
 java API summary raspberrypi.local:4028
 ```
 
-Und man sollte die Rückmeldung in der aufrufenden Konsole sehen können.
+And you should be able to see the feedback in the calling console.
 
-> :warning: Man muss sich für den Aufruf der API im Ordner der Datei `API.class` befinden.
+> :warning: You have to be in the folder of the `API.class` file to call the API.
 
-### Alternativ kann man auch an den ssh-Befehl Übergabeparameter anhängen
+### Alternatively, you can also append passing parameters to the ssh command
 
-In dem man ein gewünschten Befehl an `ssh` anhängt, kann man diesen auch innerhalb einer ssh-Session ausführen lassen. Mehrere Befehle müssen dazu allerdings in der Übergabe mit `&&` gebündelt werden:
+By appending a desired command to `ssh`, you can also execute it within an ssh session. Several commands must be bundled with `&&` in the transfer:
 
 ```console
 ssh admin@raspberrypi.local "cd /home/admin/Mining && java API lcd"
 ```
 
-Der Output ist der gleiche wie wenn man `java API lcd` auf dem Raspberry Pi aufruft, jedoch wird diese an den aufrufenden PC umgeleitet. Einfach mal ausprobieren, es kann ja nichts kaputt gehen...
+The output is the same as when you call `java API lcd` on the Raspberry Pi, but it is redirected to the calling PC. Just try it out, nothing can break...
 
 ---
 

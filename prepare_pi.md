@@ -1,64 +1,64 @@
-# Raspberry Pi vorbereiten
+# Prepare Raspberry Pi
 
-> Wenn der Raspberry Pi bereits eingerichtet ist, kann dieser Schritt übersprungen werden.
+> If the Raspberry Pi is already set up, this step can be skipped.
 
-> SSH sollte aktiviert sein.
+> SSH should be enabled.
 
 ---
 
-## Möglichkeit 1: Raspberry Pi OS [Original] verwenden
+## Option 1: Use Raspberry Pi OS [Original].
 
-Der Raspberry Pi benötigt ein Betriebssystem (OS) welches auf eine Micro-SD Karte gesielt wird, die dann in den Raspberry Pi kommt. Beim Vorbereiten der SD-Karte können bereits einige praktische Grundeinstellungen für später vorgenommen werden.
+The Raspberry Pi requires an operating system (OS) which is placed on a micro SD card, which is then inserted into the Raspberry Pi. When preparing the SD card, some practical basic settings can be made for later.
 
-1. [Raspberry Pi Imager herunterladen](https://www.raspberrypi.com/software/)
+1. [Download Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 
-2. Micro-SD-Karte mit dem Computer verbinden
+2. Connect micro SD card to the computer
 
-3. Raspberry Pi Imager starten
+3. Start Raspberry Pi Imager
 
-4. `OS wählen` -> `Raspberry Pi OS (other)` -> `Raspberry Pi OS Lite (32-bit)`
+4. `Select OS` -> `Raspberry Pi OS (other)` -> `Raspberry Pi OS Lite (32-bit)`
 
-5. SD-Karte auswählen
+5. Select SD card
 
-6. Zahnrad (unten rechts) anklicken
+6. Click on the gear (bottom right).
 
-    `Hostname` aktivieren und ausfüllen (unter dem Hostnamen taucht der Raspberry Pi später im Netzwerk auf, dies erspart das spätere Heraussuchen der IP-Adresse)
+     Activate and fill in `Hostname` (the Raspberry Pi will later appear in the network under the hostname, this saves having to look for the IP address later)
 
-    `SSH aktivieren` 
+     `Enable SSH`
 
-    `Benutzername und Passwort setzen` (mit diesen Angaben kann sich später im System des Raspberry Pis eingeloggt werden)
+     `Set username and password` (you can use these details to log into the Raspberry Pi system later)
 
-    Wifi kann eingerichtet werden, die Verbindung via LAN ist aber eher zu empfehlen!
+     Wifi can be set up, but connecting via LAN is more recommended!
 
-    `Speichern` drücken
+     Press 'Save'
 
     <!--![Imager](https://user-images.githubusercontent.com/108631209/177061261-761e8192-d44e-4b84-abd1-bf8082eaf8d2.png)-->
     <figure><img src="https://user-images.githubusercontent.com/108631209/177061261-761e8192-d44e-4b84-abd1-bf8082eaf8d2.png" alt="" width="400" /><!--<figcaption></figcaption>--></figure>
 
-7. SD-Karte auswählen und „Schreiben“ drücken
+7. Select SD card and press “Write”.
 
-8. Nachdem der Schreib Prozess abgeschlossen ist, kann die SD-Karte vom Computer getrennt und in den Raspberry Pi gesteckt werden
+8. After the writing process is complete, the SD card can be removed from the computer and inserted into the Raspberry Pi
 
-9. Nun die Strom- und Internetversorgung des Raspberry Pis anschließen und ca. 2 Minuten warten
+9. Now connect the power and internet supply to the Raspberry Pi and wait about 2 minutes
 
 ---
 
-## Möglichkeit 2: Raspiblitz verwenden
+## Option 2: Use Raspiblitz
 
-Wenn es gewünscht ist auch andere Bitcoin-Technologien zu erlernen oder zu unterstützen, eignet sich das Raspiblitz-Image für die Insatllation auf dem Raspberry Pi. Raspiblitz ist ein Raspberry Pi Os-Image speziell angepasst für den Betrieb einer Bitcoin Full Node, einer Lightning Node und diverser anderer Tools aus dem Bitcoin Ökkosystem.
+If you wish to learn or support other Bitcoin technologies, the Raspiblitz image is suitable for installation on the Raspberry Pi. Raspiblitz is a Raspberry Pi Os image specially adapted for the operation of a Bitcoin full node, a Lightning Node and various other tools from the Bitcoin ecosystem.
 
-### Installieren von Raspiblitz auf einem Raspberry Pi (4GB oder 8GB empfohlen)
+### Installing Raspiblitz on a Raspberry Pi (4GB or 8GB recommended)
 
-Die folgende Hardware und Software wurden verwendet:
+The following hardware and software were used:
 
 * Raspberry Pi 4 4GB
-* 1 TB Samsung T5 SSD
+* 1TB Samsung T5 SSD
 * Customized raspberry pi 4 aloy housing for better heat dissipation.
 * Raspiblitz 1.8.0 ([https://github.com/rootzoll/raspiblitz](https://github.com/rootzoll/raspiblitz))
 
-Für die Installation gibt es bereits eine ausführliche Anleitung auf Github ([https://github.com/rootzoll/raspiblitz](https://github.com/rootzoll/raspiblitz)). Im Falle von Problemen hilft hier auch die Raspiblitz Telegram Gruppe: [https://t.me/raspiblitz\_DE.](https://t.me/raspiblitz\_DE)
+There are already detailed instructions for the installation on Github ([https://github.com/rootzoll/raspiblitz](https://github.com/rootzoll/raspiblitz)). In case of problems, the Raspiblitz Telegram group can also help: [https://t.me/raspiblitz\_DE.](https://t.me/raspiblitz\_DE)
 
-> :bulb: Das wars. Nun ist der Raspberry Pi bereit. Nachfolgend werden alle Schritte basierend auf Raspiblitz erläutert. Die Schritte für Raspberry Pi OS sollten ähnlich sein.
+> :bulb: That's it. Now the Raspberry Pi is ready. All steps based on Raspiblitz are explained below. The steps for Raspberry Pi OS should be similar.
 
 ---
 

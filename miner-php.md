@@ -1,40 +1,40 @@
-# Miner.php Datei
+# Miner.php file
 
-cgminer ab der Version 4.12.1 liefert eine PHP-Datei aus namens `miner.php` und ist im Verzeichnis der Miner-Software zu finden. Wenn man diese durch den u.U. bereits vorhandenen Apache-Webserver anzeigen lassen will, so hat man für das interne Netzwerk eine brauchbare Anzeige über den Browser.
+cgminer from version 4.12.1 on delivers a PHP file called `miner.php` and can be found in the directory of the Miner software. If you want to display this through the possibly already existing Apache web server, you have a usable display through the browser for the internal network.
 
-Auf dem RaspiBlitz läuft bereits eine Version des Apache2, der man nur noch beibringen muss PHP-Dateien zu akzeptieren. Dazu gibt es mehrere Dutzend Anleitungen im Netz, in Kürze läuft das etwa so:
+The RaspiBlitz already runs a version of Apache2, which only needs to be taught to accept PHP files. There are several dozens of tutorials on the net, in a nutshell it works like this:
 
 ```console
 sudo apt-get install libapache2-mod-php7.4
 ```
 
-> :memo: Wieder mal, wie bereits an anderer Stelle in dieser Doku erwähnt, kann es auch andere Versionen von `libapache3-mod-php` geben. Um die richtige zu finden kann man diese mit `sudo apt-cache search libpache2-mod-php` suchen und die gefundene Version nach obigem Schema installieren.
+> :memo: Again, as mentioned elsewhere in this doc, there may be other versions of `libapache3-mod-php`. To find the right one you can search for it with `sudo apt-cache search libpache2-mod-php` and install the found version according to the above scheme.
 
-Für die Darstellung der Datei `miner.php` im Browser muss man diese Datei zunächst in das Verzeichnis des Webservers kopieren (auf dem Raspi ist das `/var/www/html`) oder man legt einen sogenannten Softlink (oder symlink oder symbolic link) im Verzeichnis des Webservers an und veweist auf die genannte Datei nach diesem Schema `ln -s /path/to/file /path/to/symlink`:
+To display the file `miner.php` in the browser you first have to copy this file into the directory of the webserver (on the Raspi this is `/var/www/html`) or you create a so called softlink (or symlink or symbolic link) in the directory of the webserver and link to the mentioned file according to this scheme `ln -s /path/to/file /path/to/symlink`:
 
 ```console
 ln -s /home/admin/Mining/cgminer_4.12.1/miner.php /var/www/html/
 ```
 
-Nun kann man überprüfen ob sich unter der Adresse des Webservers ein Datei `miner.php` befindet durch Aufrufen der Adresse `http://<HOSTNAME>/miner.php` im Browser, `<HOSTNAME>` muss eben durch die IP-Adresse Eures Raspis ersetzt werden. Das Ergebnis sieht dann so aus:
+Now you can check if there is a file `miner.php` under the address of the webserver by calling the address `http://<HOSTNAME>/miner.php` in your browser, `<HOSTNAME>` just has to be replaced by the IP address of your Raspi. The result will look like this:
 
 <img src=".assets/Miner-php1.png" alt="miner.php" width="70%" />
 
-oder so (je nach Einstellung):
+or so (depending on the setting):
 
 <img src=".assets/Miner-php2.png" alt="miner.php" width="70%" />
 
 ---
 
-Wenn man nun die `miner.php` sorgfälltig durchliest, kann man erkennen das sich die Datei `miner.php` leicht durch eine externe Datei `myminer.php` anpassen lässt. Ich kann Euch nicht das durchlesen der Kommentare ersparen und auch nicht das Ausprobieren und Debuggen, **ABER** es lohnt sich hier ein paar Stunden zu verwenden.
+If you now read the `miner.php` carefully, you can see that the file `miner.php` can easily be adapted by an external file `myminer.php`. I can't spare you reading through the comments, nor can I spare you the trial and error debugging, **BUT** it's worth spending a few hours here.
 
-Zuerst legen wir die Datei `myminer.php` im Arbeitsverzeichnis an (da wo auch die miner.php liegt), also in meinem Fall  im Verzeichnis `/home/admin/Mining/cgminer_4.12.1/`:
+First we create the file `myminer.php` in the working directory (where the miner.php is located), so in my case in the directory `/home/admin/Mining/cgminer_4.12.1/`:
 
 ```console
 sudo nano /home/admin/Mining/cgminer_4.12.1/myminer.php
 ```
 
-mit dem Inhalt:
+with the content:
 
 ```php
 <?php                                                                                                                                    
@@ -47,36 +47,36 @@ $customsummarypages = array('Summary' => 1, 'Kano' => 1);
 ?>
 ```
 
-nun wieder ausführbar machen:
+now make it executable again:
 
 ```console
 sudo chmod 755 /home/admin/Mining/cgminer_4.12.1/myminer.php
 ```
 
-und entweder in das Verzeichnis des Webservers kopieren (`/var/www/html/`) oder einen symlink darauf verweisen lassen nach bereits erwähntem Schema `ln -s /path/to/file /path/to/symlink`:
+and either copy it into the directory of the web server (`/var/www/html/`) or let a symlink point to it according to the already mentioned scheme `ln -s /path/to/file /path/to/symlink`:
 
 ```console
 ln -s /home/admin/Mining/cgminer_4.12.1/myminer.php /var/www/html/
 ```
 
-und schon hat man eine theoretisch angepasste Seite nach eigenem Gusto:
+and you have a theoretically customized page to your own liking:
 
 <img src=".assets/Miner-php3.png" alt="miner.php" width="70%" />
 
-> :memo: Die Felder und Tabellen können mit etwas Programmierkenntnissen auf eigene Bedürfnisse angepasst werden. Wenn ihr wisst wie es geht, sagt mir Bescheid ;-)
+> :memo: The fields and tables can be customized to your own needs with some programming knowledge. If you know how to do it, let me know ;-)
 
 ---
 
-## Für die Gekko-Freunde (R909 und Compac F)
+## For the Gekko friends (R909 and Compac F).
 
-Zuerst müssen wir die neueste Version von `miner.php` über Github holen:
+First we need to get the latest version of `miner.php` via Github:
 
 ```console
 cd /home/admin/Mining/cgminer_4.12.1/
 git pull
 ```
 
-Diese beinhaltet spezielle Anpassungen für die Gekko-Fraktion. Durch Anpassen der `myminer.php` können wir nun auf diese Anpassungen zugreifen:
+This contains special customizations for the Gekko faction. By adjusting the `myminer.php` we can now access these customizations:
 
 ```php
 <?php                                                                                                                                    
@@ -89,7 +89,7 @@ $customsummarypages = array('Gekko' => 1, 'GekkoChips' => 1);
 ?>
 ```
 
-Das Ergebnis ist dann wie folgt:
+The result is then as follows:
 
 <img src=".assets/miner-php-R909_1.png" alt="Miner.php für R909" width="70%" />
 
@@ -99,7 +99,7 @@ Das Ergebnis ist dann wie folgt:
 
 ## Fun Section
 
-Für die Verspielten unter Euch: Wenn ihr folgendes in die Datei myminer.php eintragt, könnt ihr die Farben der `miner.php` nach belieben anpassen:
+For the playful among you: If you add the following to the myminer.php file, you can customize the colors of `miner.php` as you like:
 
 ```php
 <?php
@@ -131,11 +131,11 @@ $colouroverride = array(
 ?>
 ```
 
-Das Ergebnis im obigen Versuch ist folgendes:
+The result in the above experiment is as follows:
 
 <img src=".assets/miner-php-R909_3.png" alt="Miner.php für R909" width="70%" />
 
-Oder hier eine Alternative:
+Or here is an alternative:
 
 <img src=".assets/miner-php_R909_black.png" alt="Miner.php für R909" width="70%" />
 

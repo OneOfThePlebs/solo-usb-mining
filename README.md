@@ -1,77 +1,77 @@
-# Inhalt
+# Contents
 
-## Allgemeines
+## General
 
-* 💡 Warum USB-Mining
-* 💡 Was ist Lottery-Mining?
+* 💡 Why USB mining
+* 💡 What is lottery mining?
 
-## Vorbereitung
+## Preparation
 
-* [☀ Einkaufsliste](shopping-list.md)
-* [☀ Voraussetzungen](requirements.md)
+* [☀ Shopping List](shopping-list.md)
+* [☀ requirements](requirements.md)
 
 ## Installation
 
-* [☀ Raspberry Pi vorbereiten](prepare_pi.md) bzw. [Installation von cgminer auf dem RaspiBlitz](cgminer_on_raspiblitz.md)
-* [☀ Mining Software installieren](install_miner.md)
+* [☀ Prepare Raspberry Pi](prepare_pi.md) bzw. [Installing cgminer on the RaspiBlitz](cgminer_on_raspiblitz.md)
+* [☀ Install mining software](install_miner.md)
 
-## Konfiguration
+## Configuration
 
-* [⛏ Mining Software starten](start_mining.md)
-* [⛏ Mining Software - GUI Konfiguration](cgminer_GUIConfiguration.md)
-* [⛏ Mining Software - Erweiterte Konfiguration](EnhancedConfiguration.md)
-* [⛏ Miner Einstellungen MHz/ mV](miner-settings.md)
-* [⛏⛏ Mehrere Miner betreiben](multiple-usb-miner.md)
-* [🌩 Übertakten](/uebertakten.md): Hier widmen wir uns dem Tuning.
-* [⚙️ R909](/R909.md): Hier widmen wir uns dem dem Gekkoscience Terminus R909.
-* [⚙️ cgminer JAVA API](/cgminer_JAVA_API.md): Details zur Java API für cgminer.
-* [⚙️ cgminer API scripts](/cgminer_JAVA_API_Scripts.md): Python-Skriptbeispiele um API effizienter auszulesen bzw. um die Konfiguration zu automatiseren
-* [⚙️ miner-php](/miner-php.md): Mining-Feedback im Browser.
-* [❄ Troubleshooting](/troubleshooting.md) zeigt die Probleme denen ich begegnet bin.
+* [⛏ Start Mining Software](start_mining.md)
+* [⛏ Mining Software - GUI Configuration](cgminer_GUIConfiguration.md)
+* [⛏ Mining Software - Advanced configuration](EnhancedConfiguration.md)
+* [⛏ Miner settings MHz/ mV](miner-settings.md)
+* [⛏⛏ Run multiple miners](multiple-usb-miner.md)
+* [🌩 Overclocking](/uebertakten.md): Here we dedicate ourselves to tuning.
+* [⚙️ R909](/R909.md): Here we focus on the Gekkoscience Terminus R909.
+* [⚙️ cgminer JAVA API](/cgminer_JAVA_API.md): Details about the Java API for cgminer.
+* [⚙️ cgminer API scripts](/cgminer_JAVA_API_Scripts.md): Script examples to read API more efficiently or to automate configuration
+* [⚙️ miner-php](/miner-php.md): Mining feedback in the browser.
+* [❄ Troubleshooting](/troubleshooting.md) shows the problems I encountered.
 
 ## Weitere Links
 
-* [💡 Bildergalerie](/Galerie.md): "When Plebs Go Wild"
-* [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md)
+* [💡 Image gallery](/Galerie.md): "When Plebs Go Wild"
+* [💡 Helpful commands for easier operation under Linux/Raspberry Pi](LinuxCommands.md)
 * [💡 PV/HomeAssistent/InfoTicker etc.](additional-links.md)
-* 💡 Autoren & [Solo-USB-Mining Telegram Gruppe](https://t.me/BTC_solo_mining)
+* 💡 Authors & [Solo-USB-Mining Telegram Gruppe](https://t.me/BTC_solo_mining)
 
 ---
 
-## Warum Solo-USB-Mining?
+## Why solo USB mining?
 
-Beim USB-Mining macht das „Drumherum“ eher Spaß als der Gewinn. Die `6,25 BTC + transaction fees` sind aber immer noch eine tolle Sache. Denkt dran, ab etwa Mai 2024 sind es nur noch `3,125 BTC + transaction fees`.
+When it comes to USB mining, the “extra bits” are more fun than the profit. But the `6.25 BTC + transaction fees` are still a great thing. Remember, from around May 2024 it will only be `3,125 BTC + transaction fees`.
 
-Das Ganze sollte als ein Projekt gesehen werden, um Details des Minings zu ergründen und zu verstehen. Zudem stärkt es das Netzwerk und kommt einer Dezentralisierung des Minings zugute.
+The whole thing should be seen as a project to explore and understand the details of mining. It also strengthens the network and benefits the decentralization of mining.
 
-Das Schöne beim USB-Mining ist die niedrige Einstiegshürde, es ist also mit relativ wenig Kosten verbunden und es gibt viel zu Lernen. :)
+The beauty of USB mining is that it has a low barrier to entry, so it costs relatively little and there is a lot to learn. :)
 
-Außerdem verbraucht der kleine USB-Miner wenig Strom, macht wenig Lärm und er nimmt wenig Platz weg.
+In addition, the small USB miner consumes little power, makes little noise and takes up little space.
 
 ---
 
-## Was ist Lottery-Mining?
+## What is lottery mining?
 
-Beim Bitcoin Mining hat grundsätzlich jeder die Möglichkeit einen Block zu finden. Da die Industrie um das Mining weltweit sehr groß geworden ist und es bei jedem Block purer Zufall ist wer diesen findet, ist es üblich in einem Pool mit vielen anderen zusammen zu minen. Dort wird die Blockbelohnung dann bei einem gefundenen Block auf alle Poolteilnehmer aufgeteilt (anteilig je nach Hashrate).
+When it comes to Bitcoin mining, basically everyone has the opportunity to find a block. Since the mining industry has become very large worldwide and it is pure chance who finds each block, it is common to mine in a pool with many others. When a block is found, the block reward is then distributed among all pool participants (proportionately depending on the hashrate).
 
-Die Gewinnwahrscheinlichkeit kann auf dieser Seite berechnet werden: https://solochance.com/
+The probability of winning can be calculated on this site: https://solochance.com/
 
-Da es ohne einen Mining-Pool für eine Einzelperson extrem unwahrscheinlich ist einen Block zu finden, wird das Solo-Mining auch als Lottery-Mining bezeichnet. Man spielt sozusagen alle 10 Minuten Lotto indem man versucht den richtigen Hash für den nächsten Block zu raten.
+Since it is extremely unlikely for an individual to find a block without a mining pool, solo mining is also known as lottery mining. You basically play the lottery every 10 minutes by trying to guess the correct hash for the next block.
 
-Damit die Einrichtung für das Solo-Mining unkompliziert wird und die Schnittstelle zu den anderen Minern im Bitcoin Netzwerk gewährleistet ist, greift man normalerweise auf den sogenannten [solo-ckpool](https://solo.ckpool.org/) zurück. Dies ist kein üblicher Mining-Pool (wie oben beschrieben), sondern ein speziell eingerichteter Pool für Solo-Miner. Dabei bekommt derjenige der den Block findet die Belohnung alleine und gibt lediglich 2% an den „solo-ckpool“ ab (solange man keinen Block findet geht keinerlei Bezahlung an den Poolbetreiber).
+To make the setup for solo mining uncomplicated and to ensure the interface to the other miners in the Bitcoin network, you usually use the so-called [solo-ckpool](https://solo.ckpool.org/). This is not a usual mining pool (as described above), but a specially set up pool for solo miners. The person who finds the block receives the reward alone and only gives 2% to the “solo-ckpool” (as long as no block is found, no payment goes to the pool operator).
 
-Für das Lottery-Mining bieten sich USB-Miner aufgrund des geringen Stromverbrauchs besonders an. Das ganze Projekt kann aber auch mit leistungsstärkeren Minern umgesetzt werden, um die Gewinnwahrscheinlichkeit zu erhöhen. Dies lohnt sich aber nur wenn man den dafür benötigten Strom gratis oder sehr günstig bekommen kann.
+USB miners are particularly suitable for lottery mining due to their low power consumption. The entire project can also be implemented with more powerful miners to increase the probability of winning. But this is only worthwhile if you can get the electricity you need for free or very cheaply.
 
 ---
 
 ## Value 4 value
 
-Du kannst hier für das Projekt spenden und dafür sorgen, dass es weiterhin dokumentiert und ausgebaut wird:
+You can donate to the project and ensure that it continues to be documented and expanded here:
 
 <table border=1>
-<tr><td>lumpycarp37@walletofsatoshi.com</td><td>nearfear18@walletofsatoshi.com</td></tr>
-<tr><td><img src=".assets/V4V.png" alt="Donate" width="150" /></td><td><img width="150" alt="qr" src="https://user-images.githubusercontent.com/108099690/197496656-55d2d453-34d4-475a-83c0-1c1aa55bb963.png" /></td></tr>
-<tr><td>OneOfThePlebs</td><td>Gunther0815</td></tr>
+<tr><td>lumpycarp37@walletofsatoshi.com</td><td></td></tr>
+<tr><td><img src=".assets/V4V.png" alt="Donate" width="150" /></td><td></td></tr>
+<tr><td>OneOfThePlebs</td><td></td></tr>
 <!--<tr><td></td><td></td></tr>-->
 </table>
 

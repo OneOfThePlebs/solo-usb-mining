@@ -1,8 +1,8 @@
 # ☀ Multiple USB-Miner
 
-Mehrere Miner an einem USB-Hub zu betreiben überfordert ALLE Hubs die ich ausprobiert habe, außer der unten genannten Spezialhardware von Gekkoscience. Dies liegt vermutlich daran dass USB meist gar nicht für Ströme größer 1A spezifiziert ist und sich alle Hubs somit gemäß der Norm verhalten. Das hilft uns natürlich nicht weiter bei einem stromhungrigen Gerät wie dem Gekkoscience Compac F.
+Running multiple miners on one USB hub overwhelms ALL hubs I have tried, except for the special hardware from Gekkoscience mentioned below. This is probably due to the fact that USB is usually not specified for currents greater than 1A and therefore all hubs behave according to the standard. Of course this does not help us with a power hungry device like the Gekkoscience Compac F.
 
-Standard	| Spannung	| max. Stromstärke	| max. Leistung
+Standard	| Voltage	| max. Current	| max. Power
 --------- | --------- | ----------------- | -------------
 USB 1.0/1.1	| 5 V	| 0,1 A	| 0,5 W
 USB 2.0	| 5 V	| 0,5 A	| 2,5 W
@@ -11,32 +11,32 @@ USB 3.1 (Gen2)	| 5 V	| 3 A	| 15 W
 USB-BC 	| 5 V	| 1,5 A	| 7,5 W
 USB-PD	| 5 V, 12 V, 20 V	| 5 A	| 100 W
 
-Mit einem Standard-Hub konte ich zwar auch 2 USB-Miner betreiben, jedoch bei mageren 270 MHz (bzw. 150GH/s (ich erinnere mich nicht genau)).
+With a standard hub I could run 2 USB miners, but at a meager 270 MHz (or 150GH/s (I don't remember exactly)).
 
-Von daher die dringende Empfehlung zu einem ähnlichen Setup für mehrere USB-Miner:
+Therefore, the urgent recommendation for a similar setup for multiple USB miners:
 > * Gekkoscience USB-Hub
-> * Externe ATX-Netzteil (ich verwende ein BeQuiet Straightpower mit 480W)
-> * USB3.1-Verlängerungen (auch hier haben nur die USB3-Verlängerungen funktioniert, die eine USB2-Verlängerung die ich verwendete, konnte den Miner nicht in Betrieb nehmen. Der Grund hierfür ist mir unklar.) 
+> * External ATX power supply (I use a BeQuiet Straightpower with 480W)
+> * USB3.1 extensions (again, only the USB3 extensions worked, the one USB2 extension I used could not get the miner to work. The reason for this is unclear to me). 
 
-Der Gekkoscience USB-Hub benötigt ein externes Netzteil, welches im Original gekauft werden kann, der Hub bietet aber auch einen Anschluß für einen PCIe-6-Stecker wie er bei jedem ATX-Netzteil vorkommt.
+The Gekkoscience USB hub requires an external power supply, which can be purchased in the original, but the hub also offers a connector for a PCIe-6 connector as found on any ATX power supply.
 
 <img src=".assets/GekkoHub.jpg" alt="Gekkoscience USB-Hub" width="400" />
 
-Das Netzteil funktioniert nur wenn der Mainborad-Connector überbrückt wird, sonst läuft das Netzteil nicht an.
+The power supply only works if the mainborad connector is bridged, otherwise the power supply does not start.
 
 <img src=".assets/ATXNetzteil.jpg" alt="ATX Netzteil" width="400" />
 
-Dazu reicht es in meinem Fall `Pin 16` (`PS_ON`) und `18` (`Masse`) zu überbrücken:
+In my case it is sufficient to bridge `Pin 16` (`PS_ON`) and `18` (`Mass`):
 
 <img src=".assets/ATXStecker.jpg" alt="Stecker des ATX-Netzteils" width="400" />
 
-Standard-Pin-Belegung eines 24-poligen ATX-Steckers:
+Standard pin assignment of a 24-pin ATX connector:
 
 <img src=".assets/ATXPinBelegung.png" alt="ATX Pinbelegung" width="200" />
 
 ---
 
-Alternativ zur Brücke oben kann man auch einen Schalter für den 20- bzw. 24-poligen Anschluss bestellen:
+As an alternative to the jumper above, you can also order a switch for the 20- or 24-pin connection:
 
 <img src=".assets/ATX Schalter.png" alt="ATX Schalter" width="400" />
 

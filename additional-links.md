@@ -1,6 +1,6 @@
-# Weiterführende Links & Github Projekte
+# Further links & Github projects
 
-## PV Solo Mining
+## Photovoltaic Solo Mining
 
 * https://github.com/4plus17/PV-Solo-Mining
 
@@ -17,7 +17,7 @@
 * https://github.com/max21h/CGMiner-OLED-Display
 
 
-> :bulb: Lasst Liebe und Sats bei den Jungs für ihre großartige Arbeit! 
+> :bulb: Leave love and sats to the boys for their great work!
 
 ---
 

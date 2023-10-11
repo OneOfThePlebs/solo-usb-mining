@@ -1,15 +1,15 @@
-# Voraussetzungen
+# requirements
 
-Da der üblichste Weg fürs Solo-Mining ein Raspberry Pi ist, wird ab hier ausführlich beschrieben, wie man einen solchen einrichtet und damit das Mining später startet.
+Since the most common way for solo mining is with a Raspberry Pi, we will describe in detail here how to set one up and start mining later.
 
-Um den Raspberry Pi einzurichten und alles Nötige zu installieren, muss auf das Gerät zugegriffen werden. Dafür gibt es zwei verschiedene gängige Methoden.
+In order to set up the Raspberry Pi and install everything necessary, the device must be accessed. There are two different common methods for this.
 
-* Über das Netzwerk vom eigenen Computer aus (SSH)
-* Am Raspberry Pi angeschlossenes Display, Tastatur und ggf. Maus
+* Via the network from your own computer (SSH)
+* Display, keyboard and, if necessary, mouse connected to the Raspberry Pi
 
-Die erste Methode ist die bequemere, da der Raspberry Pi nur an Strom und Internet angeschlossen sein muss. Dadurch kann er überall stehen, solange er im selben Netzwerk ist (möglichst über LAN), wie der Computer, von dem aus der Raspberry Pi bedient werden soll.
-Die zweite Methode ist die zunächst intuitivere für alle die noch nie in der Kommandozeile (Terminal) auf einem Computer waren. Für die Einrichtung wird der Raspberry Pi dann an einem Display angeschlossen und die Eingaben werden mit einer direkt angeschlossenen Tastatur gemacht. Ein großer Nachteil ist, dass alle Befehle entweder manuell eingetippt werden oder auf den Raspberry gebracht werden müssen (als Datei oder über Internet).
-Im Folgenden wird der Weg beschrieben um mit der ersten Methode, also Via SSH, den Raspberry Pi fürs Mining vorzubereiten und das Mining zu starten. Die ganze Einrichtung ist nur „Copy&Paste“, sodass auch jeder Anfänger sich an die Methode via SSH wagen sollte, bevor er direkt ein Display und eine Tastatur für den Raspberry Pi frei macht.
+The first method is the more convenient because the Raspberry Pi only needs to be connected to power and internet. This means it can be anywhere, as long as it is in the same network (preferably via LAN) as the computer from which the Raspberry Pi is to be operated.
+The second method is initially more intuitive for anyone who has never used the command line (terminal) on a computer. To set it up, the Raspberry Pi is then connected to a display and the entries are made using a directly connected keyboard. A big disadvantage is that all commands either have to be typed in manually or transferred to the Raspberry (as a file or via the Internet).
+The following describes the way to prepare the Raspberry Pi for mining and start mining using the first method, i.e. via SSH. The whole setup is just “copy and paste”, so even beginners should try the method via SSH before setting up a display and keyboard for the Raspberry Pi.
 
 ---
 

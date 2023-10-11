@@ -1,16 +1,16 @@
 # ❄ Troubleshooting
 
-## Dingen denen ich begegnet bin...
+## Things I have encountered...
 
-* 90% aller Probleme resultieren aus einem zu schwachen USB Hub. Der USB-Miner Gekkoscience Compac F (und vermutlich auch alle anderen USB-Miner) will Strom, und zwar nicht zu knapp.
+* 90% of all problems result from a too weak USB hub. The USB miner Gekkoscience Compac F (and probably all other USB miners) wants power, and not too little.
 
-* Ein Miner, angeschlossen an einem Hub, wird man vermutlich über die Drosselung der Frequenz (MHz) immer zum Laufen bekommen. Natürlich will mann aber das Maximum herauskitzeln und sich nicht mit unterdurchschnittlicher Leistung zufrieden geben. Hier hilft nur ein besserer Hub!
+* A miner connected to a hub will probably always work by throttling the frequency (MHz). But of course you want to get the maximum out of it and don't want to settle for below average performance. Only a better hub can help here!
 
-* Bei zwei Minern hat sich für mich gezeigt, dass wirklich nur Spezialhardware (z.B. der Gekkoscience USB Hub für 100€ (ohne Netzteil)) das gewünschte Ergebnis liefert. Sieha dazu Kapitel [multiple-usb-miner.md](multiple-usb-miner.md "mention"). Natürlich habe ich keine Möglichkeit alle Hubs zu testen. Sollte es hier Erfahrungswerte von anderen Usern geben, kann ich diese gerne hier mit einpflegen.
+* With two miners it showed up for me that really only special hardware (e.g. the Gekkoscience USB Hub for 100€ (without power supply)) delivers the desired result. See chapter [multiple-usb-miner.md](multiple-usb-miner.md "mention"). Of course I have no possibility to test all hubs. If there are experience values from other users, I can add them here with pleasure.
 
-* Ungenügende Kühlung scheint den Miner instabil laufen zu lassen. Es wird dringend empfohlen ab einer Taktung von 200MHz aktiv zu kühlen. Das sollte sich auch positiv auf die Lebensdauer des Miners auswirken. Siehe dazu auch das Kapitel [uebertakten.md](uebertakten.md "mention").
+* Insufficient cooling seems to make the miner run unstable. It is strongly recommended to actively cool the miner from a clock speed of 200MHz. This should also have a positive effect on the lifetime of the miner. See also the chapter [uebertakten.md](uebertakten.md "mention").
 
-* Für das Debugging unter Linux muss ein Grundverständnis für Dateien und Pfade vorhanden sein. Siehe dazu den Link auf dieser Unterseite: [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md)
+* For debugging under Linux you need to have a basic understanding of files and paths. See the link on this subpage: [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md)
 
 ---
 

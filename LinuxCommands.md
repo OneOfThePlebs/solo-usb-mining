@@ -1,14 +1,14 @@
-# 💡 Tipps und Tricks für eine erleichterte Bedienung unter Linux/Raspberry Pi
+# 💡 Tips and tricks for easier operation under Linux/Raspberry Pi
 
-Linux ist vor allem in der Kommandozeile stark. Um auch weniger versierten Bastlern ein paar hilfreiche Befehle mit an die Hand zu geben, die ihr Arbeitsleben unter Linux so komfortable wie möglich gestalten sollen, werde ich hier ein paar dieser Befehle auflisten.
+Linux is especially strong in the command line. To give less experienced hobbyists a few helpful commands to make their working life under Linux as comfortable as possible, I will list a few of these commands here.
 
-⚠️ Diese Befehle müssen so wie sie gezeigt werden keinen großen Sinn ergeben, sondern dienen der Illustration der Machbarkeit.
+⚠️ These commands don't have to make much sense as they are shown, but serve to illustrate their feasibility.
 
-⚠️ Unter Linux kann man Pfade `relativ` oder `absolut` angeben. Wenn man den Unterschied kennt, ist die Navigation durch die Pfade sehr viel einfacher und auch die Lesbarkeit von Beispielen erhöht sich massiv. Siehe hierzu z.B. https://www.selflinux.org/selflinux/html/verzeichnisse_unter_linux02.html
+⚠️ Under Linux you can specify paths `relatively` or `absolutely`. If you know the difference, navigating through the paths is much easier and also the readability of examples increases massively. See for example https://www.selflinux.org/selflinux/html/verzeichnisse_unter_linux02.html
 
-## `history`, `!`, `grep` und `tail`
+## `history`, `!`, `grep` and `tail`
 
-`history` zeigt alle Befehle die bereits einmal eingegeben wurden, als Liste an:
+`history` displays all commands that have already been entered once as a list:
 
 ```console
 history | tail -n 10
@@ -24,9 +24,9 @@ history | tail -n 10
   947  history | tail -n 10
 ```
 
-Wie man anhand der fortlaufenden Nummer sehen kann, kann diese Befehlshistorie sehr lang sein, weswegen ich sie mit `tail -n 10` auf die letzten 10 Einträge begrenzt habe. Das `|`-Zeichen (genannt "pipe") verknüpft hierzu die Befehle `history` und `tail`
+As you can see from the consecutive number, this command history can be very long, which is why I limited it to the last 10 entries with `tail -n 10`. The `|` character (called "pipe") links the commands `history` and `tail` for this.
 
-Ebenso ist es möglich nach bestimmten Befehlen in der Befehlshistorie zu suchen. Ich suche nun nach einem Befehl der in meienr Erinnerung mit dem Skript `cgminer.sh` zu tun hatte. Wieder begrenze ich die Anzahl der gefundenen Einträge auf die letzten 10:
+It is also possible to search for specific commands in the command history. I am now looking for a command that in my memory had to do with the script `cgminer.sh`. Again I limit the number of found entries to the last 10:
 
 ```console
 history | grep cgminer.sh | tail -n 10
@@ -42,7 +42,7 @@ history | grep cgminer.sh | tail -n 10
   953  history | grep cgminer.sh | tail -n 10
 ```
 
-Damit ich nun einen aufwendigen Befehl wie in Zeile 921 `sudo su - -c "screen -dm -S miner /home/admin/Mining/cgminer.sh"` nicht erneut eintippen muss, genügt es die Zeilennummer hinter ein Ausrufezeichen `!` zu setzen, und der entsprechende Befehl wird unmittelbar ausgeführt. Der Anschaulichkeit halber, weil der Befehl `cat` auch eine Rückgabe liefert, verwende ich `!952` als Demonstration:
+Now, so that I don't have to retype an elaborate command like in line 921 `sudo su - -c "screen -dm -S miner /home/admin/Mining/cgminer.sh"`, it is sufficient to put the line number after an exclamation mark `!`, and the corresponding command is executed immediately. For the sake of illustration, because the `cat` command also returns a return, I use `!952` as a demonstration:
 
 ```console
 !952
@@ -55,52 +55,52 @@ sudo ./cgminer_4.12.1/cgminer --api-listen --api-allow "W:192.68.2.0/24,W:127.0.
 
 ---
 
-## SSH auth-key auf Raspberry Pi hinterlegen
+## Store SSH auth-key on Raspberry Pi
 
-Durch Abspeichern eines Authentication Keys des Host-PCs auf dem Raspberry Pi entfallen bei der SSH-Verbindung die Passworteingaben. Dies ist vor allem hilfreich wenn man über die API Mining-Daten auf dem Host-PC automatisiert anzeigen lassen will.
+By storing an authentication key of the host PC on the Raspberry Pi, the password entries are omitted during the SSH connection. This is especially helpful if you want to automatically display mining data on the host PC via the API.
 
 > ```diff
-> Erläuterungen folgen in Kürze
-> - ssh-keygen --> private-key in `/home/<user>/.ssh/id_rsa` und public-key in `/home/user/.ssh/id_rsa.pub`
-> - Ändern der Rechte: `cd ~/.ssh` und `chmod 600 id_rsa`
-> - Übertragen des Keys auf den Raspi: `ssh-copy-id admin@raspberrypi.local`
-> - einloggen mit `ssh admin@raspberrypi.local`
+> Explanations will follow shortly
+> - ssh-keygen --> private-key in `/home/<user>/.ssh/id_rsa` and public-key in `/home/user/.ssh/id_rsa.pub`
+> - change the permissions: `cd ~/.ssh` and `chmod 600 id_rsa`
+> - transfer the key to the Raspi: `ssh-copy-id admin@raspberrypi.local`
+> - log in with `ssh admin@raspberrypi.local`
 > ```
 
-## crontab verwenden für zeitgesteuerte Leistungsanpassung (z.B. des R909)
+## use crontab for time controlled power adjustment (e.g. of the R909)
 
-> :warning: Für dieses Beispiel wird eine funktionierende Java API benötigt. Siehe dazu [⚙️ cgminer JAVA API](/cgminer_JAVA_API.md).
+> :warning: This example requires a working Java API. See for this [⚙️ cgminer JAVA API](/cgminer_JAVA_API.md).
 
-Mittels crontab können auf einem Raspberrypi oder anderem Linux-basiertem System abhängig von der Zeit Befehle ausgeführt werden. Als Beispiel dient hier der Versuch den R909 USB-Miner von Monatg 00:00 Uhr bis Freitag 23:59 Uhr mit einer Frequenz von 350MHz zu betreiben, am Wochenende von Samstag 00:00 Uhr bis Sonntag 23:59 Uhr jedoch mit 470 MHz. Ob dies ein realistisches Szenario ist, bleibt jedem selbst überlassen, als Anschauungsbeispiel ist es aber hervorragend geeignet.
+Using crontab, commands can be executed on a Raspberrypi or other Linux-based system depending on the time. As an example we try to run the R909 USB-Miner with a frequency of 350MHz from Monday 00:00 to Friday 23:59, but on the weekend from Saturday 00:00 to Sunday 23:59 with 470 MHz. Whether this is a realistic scenario is up to everyone, but as an illustrative example it is excellent.
 
-Als erstes öffnen wir in der Konsole die Konfigurationsdatei in der alle cronjobs gespeichert sind. Dies geht ganz einfach so:
+First we open the configuration file in the console where all cronjobs are stored. This is very simple:
 
 ```console
 crontab -e
 ```
 
-beim ersten Aufruf kann hierzu einfach der Editor ausgesucht werden. Später wird crontab die Konfigurationsdatei immer mit diesem Editor verwenden. Wir verwenden für die zeitliche Steuerung das Skript aus Kapitel [⚙️ cgminer API scripts](/cgminer_JAVA_API_Scripts.md):
+at the first call you can simply select the editor for this. Later crontab will always use the configuration file with this editor. For the time control we use the script from chapter [⚙️ cgminer API scripts](/cgminer_JAVA_API_Scripts.md):
 
 ```console
-# Starte Montag 00:00 Uhr mit 350MHz
+# Start Monday 00:00 with 350MHz
 00 00 * * MON /home/admin/Mininig/cgminer-API.sh 0 350 350
 
-# Starte Samstag 00:00 Uhr mit 470MHZ
+# Start Saturday 00:00 with 470MHZ
 00 00 * * SAT /home/admin/Mininig/cgminer-API.sh 0 470 470
 ```
 
-Wie gewohnt mit dem Editor Eurer Wahl speichern. Die angelegten Jobs können mir `crontab -l` ausgegeben werden, mit `crontab -r` können sie gelöscht werden. Es gibt nahezu keine Einschränkunegn der zeitlichen Steuerung, einfach mal ein bisschen im Internet recherchieren.
+Save as usual with the editor of your choice. The created jobs can be output with `crontab -l` and they can be deleted with `crontab -r`. There are almost no restrictions on timing, just do a little research on the internet.
 
-Von nun an wird der R909 zeitlich ferngesteuert. Zum Ausprobieren der Syntax in cron kann man die Zeiten in die nahe Zukunft legen und einfach live beobachten:
+From now on the R909 will be controlled remotely. To try out the syntax in cron, you can set the times in the near future and simply observe them live:
 
 ```console
-# Starte Dienstag 14:30 Uhr mit 350MHz
+# Start Tuesday 14:30 with 350MHz
 30 14 * * TUE /home/admin/Mininig/cgminer-API.sh 0 350 350
 
-# Starte Dienstag 14:35 Uhr mit 400MHz
+# Start Tuesday 14:35 with 400MHz
 35 14 * * TUE /home/admin/Mininig/cgminer-API.sh 0 400 400
 
-# Starte Dienstag 14:40 Uhr mit 415MHz
+# Start Tuesday 14:40 with 415MHz
 40 14 * * TUE /home/admin/Mininig/cgminer-API.sh 0 415 415
 ```
 

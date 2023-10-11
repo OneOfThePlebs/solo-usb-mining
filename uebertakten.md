@@ -1,6 +1,6 @@
 # 🌩 Übertakten
 
-## Der Spaß-Teil
+## The fun part
 
 <!-- > :warning: **Warning:** Do not push the big red button.  -->
 
@@ -8,41 +8,41 @@
 
 <!-- > :bulb: **Tip:** Remember to appreciate the little things in life.  -->
 
-> :warning: **ACHTUNG**: Übertakten sorgt für eine höhere Leistungsaufnahme. Es ist dringend anzuraten sich **vorher** über ein geeignetes Kühlkonzept Gedanken zu machen, da man Gefahr läuft den Chip **dauerhaft zu schädigen**. Ich rate niemandem zum Tunen des Systems, vor allem da der Mehrwert relativ gering ist.
+> :warning: **WARNING**: Overclocking results in a higher power consumption. It is strongly recommended to think about a suitable cooling concept **before**, because you run the risk of damaging the chip **permanently**. I don't advise anyone to tune the system, especially since the added value is relatively low.
 
-Eine kleine Anregung für ausreichende Kühlung:
+A small suggestion for sufficient cooling:
 
 <table><tr><td><img src=".assets/Kühlkörper.jpg" alt="Kühlkörper" width="400" /></td><td><img src=".assets/IMG-1285.jpg" alt="Kühlkörper" width="400" /></td><td><img src=".assets/IMG-1286.jpg" alt="Kühlkörper" width="400" /></td></tr></table>
 
-Hierzu wurde ein CPU-Kühler mit Heatpipes anstatt des Standard-Kühlkörpers verbaut. Unbedingt Wärmeleitpaste verwenden für eine optimale Wärmeableitung.
+A CPU cooler with heatpipes was installed instead of the standard heatsink. Be sure to use thermal paste for optimal heat dissipation.
 
-Die Standard-Spannung liegt bei 1.45V. Aus der Beschreibung des **Gekkoscience Compaq F** USB-Miners lassen sich des Weiteren folgende Werte als Anhaltspunkt ablesen:
+The standard voltage is 1.45V. The following values can be read from the description of the **Gekkoscience Compaq F** USB Miner as a guide:
 
 | Frequency (MHz)        | 400  | 500  | 545  | 600  | 700  | 800  |
 | ---------------------- | ---- | ---- | ---- | ---- | ---- | ---- |
 | USB Hub Power (Ampere) | 2.00 | 2.75 | 3.00 | 3.30 | 4.00 | 5.00 |
 | Hash Speed (GH/s)      | 200  | 300  | 366  | 400  | 460  | 550  |
 
-> **Anmerkung:** Je höher die Hashrate desto größer ist die Abweichung vom Durchschnitt, bedingt durch Herstellungstoleranzen des ASIC.
+> **Note:** The higher the hashrate the greater the deviation from the average, due to manufacturing tolerances of the ASIC.
 
-Spannung kann am Potentiometer eingestellt und wie folgt gemessen werden:
+Voltage can be adjusted at the potentiometer and measured as follows:
 
-<figure><img src=".assets/Potentiometer2.jpg" alt="Potentiometer" width="400" /><figcaption>Bild vom Potentiometer</figcaption></figure>
+<figure><img src=".assets/Potentiometer2.jpg" alt="Potentiometer" width="400" /><figcaption>Picture of Potentiometer</figcaption></figure>
 
-Die Einstellung am Potentiometer sollte umgehend mit einem Multimeter verifiziert werden. 
+The setting on the potentiometer should be verified immediately with a multimeter. 
 
-<figure><img src=".assets/Spannungsabgriff.JPG" alt="Spannungsabgriff" width="400" /><figcaption>Bild vom Spannungsabgriff</figcaption></figure>
+<figure><img src=".assets/Spannungsabgriff.JPG" alt="Spannungsabgriff" width="400" /><figcaption>Image of the voltage tap</figcaption></figure>
 
-<figure><img src=".assets/poti3.jpg" alt="Spannungsabgriff" width="400" /><figcaption>Bild2 vom Spannungsabgriff</figcaption></figure>
+<figure><img src=".assets/poti3.jpg" alt="Spannungsabgriff" width="400" /><figcaption>Image 2 of the voltage tap</figcaption></figure>
 
-Zum eigentlichen übertakten kann nun die Core-Spannung von standardmäßig 1.45V durch drehen am Potentiometer erhöht werde. Grundsätzlich sollte die Erhöhung in winzigen Schritten erfolgen mit anschließender Prüfung ob die Kühlung noch ausreicht und ob das Mining noch stabil läuft.
+For the actual overclocking, the core voltage can now be increased from the standard 1.45V by turning the potentiometer. Basically, the increase should be done in tiny steps with a subsequent check if the cooling is still sufficient and if the mining is still stable.
 
-Die Stabilität kann einfach mittels **cgminer** und dem bereits genannten auto-tuning-Parameter geprüft werden. Gegebenenfalls senkt das auto-tuning die Frequenz automatisch ab.
+The stability can be easily checked by **cgminer** and the already mentioned auto-tuning parameter. If necessary, the auto-tuning automatically lowers the frequency.
 
-Die Kühlung zu überprüfen ist hier schon eine größere Herausforderung. Dies kann idealerweise durch eine Wärmebildkamera überprüft werden:
+Checking the cooling is already a bigger challenge here. Ideally, this can be checked using a thermal imaging camera:
 
-<figure><img src=".assets/IMG-1181.JPG" alt="Wärmeentwicklung" width="400" /><figcaption>Wärmeentwicklung mit Standard-USB-Hub: ca. 8W</figcaption></figure>
-<figure><img src=".assets/IMG-1183.JPG" alt="Wärmeentwicklung" width="400" /><figcaption>Wärmeentwicklung mit Standard-USB-Hub: ca. 8W</figcaption></figure>
+<figure><img src=".assets/IMG-1181.JPG" alt="Wärmeentwicklung" width="400" /><figcaption>Heat generation with standard USB hub: approx. 8W</figcaption></figure>
+<figure><img src=".assets/IMG-1183.JPG" alt="Wärmeentwicklung" width="400" /><figcaption>Heat generation with standard USB hub: approx. 8W</figcaption></figure>
 
 ---
 

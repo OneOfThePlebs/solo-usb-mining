@@ -1,37 +1,37 @@
-# Mining Software installieren
+# Install mining software
 
-> :bulb: Strom und Internet des Raspberry Pis müssen verbunden sein.
+> :bulb: The Raspberry Pi's power and internet must be connected.
 >
-> :bulb: USB Miner verbinden bzw. USB Hub einschalten.
+> :bulb: Connect USB miner or switch on USB hub.
 >
-> ⚠️ Die Pfadangaben müssen nicht für Dein System zutreffen. Es ist ratsam sich vor der Installation kurz mit `relativen` und `absoluten` Pfaden/Pfadangaben in Linux zu beschäftigen (siehe auch [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md)).
+> ⚠️ The path information does not have to apply to your system. Before installing, it is advisable to briefly look at 'relative' and 'absolute' paths/path information in Linux (see also [💡 Helpful commands for easier operation under Linux/Raspberry Pi](LinuxCommands.md)).
 
-Um nun vom eigenen Computer auf den Raspberry Pi via SSH zugreifen zu können muss sich der Computer im selben Netzwerk befinden. Ist dies der Fall öffnet man das Terminal. Dazu einfach auf dem PC nach dem Programm „Terminal“ suchen. Im Terminal geht es dann los:
+In order to be able to access the Raspberry Pi from your own computer via SSH, the computer must be on the same network. If this is the case, open the terminal. To do this, simply search for the “Terminal” program on your PC. It then starts in the terminal:
 
-Via SSH auf den Raspberry Pi zugreifen:
+Access the Raspberry Pi via SSH:
 
 ```console
 ssh solominer@miner.local
 ```
 
-solominer ist dabei der Benutzername, miner ist der Hostname (alternativ IP-Adresse des Raspberry Pis als Hostname verwenden)
-yes eingeben und ENTER drücken -> Passwort eingeben und ENTER drücken
-(beim Eingeben des Passworts gibt das Terminal keine Rückmeldung)
+solominer is the user name, miner is the host name (alternatively use the IP address of the Raspberry Pi as the host name)
+Enter yes and press ENTER -> Enter password and press ENTER
+(the terminal does not provide any feedback when entering the password)
 
-Updates durchführen:
+Perform updates:
 
 ```console
 sudo apt-get update 
 sudo apt-get upgrade -y
 ```
 
-Pakete installieren:
+Install packages:
 
 ```console
 sudo apt-get install -y build-essential git autoconf automake libtool pkg-config libcurl4-openssl-dev libudev-dev libusb-1.0-0-dev libncurses5-dev
 ```
 
-Jetzt kann der CGMiner Branch aus GIT geklont werden:
+Now the CGMiner branch can be cloned from GIT:
 
 ```console
 mkdir -p mining; cd mining 
@@ -39,7 +39,7 @@ git clone https://github.com/kanoi/cgminer.git
 cd cgminer
 ```
 
-Nach erfolgreichem Klonen aus GIT kann der CGMiner nun kompiliert werden:
+After successful cloning from GIT, the CGMiner can now be compiled:
 
 ```console
 ./autogen.sh
@@ -47,15 +47,15 @@ CFLAGS="-O2 -Wall -march=native -fcommon" ./configure --enable-gekko
 sudo make
 ```
 
-(An dieser Stelle den Raspberry Pi mit `sudo reboot` oder bei einer Raspiblitz-Installation `sudo restart` neustarten, falls der nächste Schritt nicht funktioniert)
+(At this point, restart the Raspberry Pi with `sudo reboot` or, for a Raspiblitz installation, `sudo restart` if the next step does not work)
 
-Nun kann der Fortschritt folgendermaßen getestet werden:
+Now the progress can be tested as follows:
 
 ```console
 sudo ./cgminer -n
 ```
 
-In der Antwort sollte dann die Bezeichnung des Miners auftauchen. Hier ein Beispiel:
+The name of the miner should then appear in the answer. Here's an example:
 
 ```console
 …
@@ -64,7 +64,7 @@ Product: 'NewPac Bitcoin Miner'
 …
 ```
 
-> :bulb: Nun ist alles installiert und das Mining kann beginnen!
+> :bulb: Now everything is installed and mining can begin!
 
 ---
 
