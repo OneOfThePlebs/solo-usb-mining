@@ -34,7 +34,7 @@
 * [💡 Image gallery](/Galerie.md): "When Plebs Go Wild"
 * [💡 Helpful commands for easier operation under Linux/Raspberry Pi](LinuxCommands.md)
 * [💡 PV/HomeAssistent/InfoTicker etc.](additional-links.md)
-* 💡 Authors & [Solo-USB-Mining Telegram Gruppe](https://t.me/BTC_solo_mining)
+* 💡 Authors & [Solo-USB-Mining Telegram Group](https://t.me/BTC_solo_mining)
 
 ---
 
