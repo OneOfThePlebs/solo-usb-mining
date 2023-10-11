@@ -2,6 +2,8 @@
 
 Die unten genannten Erklärungen beruhen auf Erfahrungswerten, Dokumentation und Dialogen mit Entwicklern und Anwendern des cgminers. Daher können Details lückenhaft und/oder fehlerhaft beschrieben sein. Wenn es Dinge gibt die richtig gestellt oder ergänzt werden sollen, bitte ich um genau diese Rückmeldung.
 
+The explanations below are based on experience, documentation and dialogs with developers and users of the cgminer. Therefore details may be incomplete and/or incorrectly described. If there are things that should be corrected or added, I ask for exactly this feedback.
+
 ## GUI - Main menu
 
 <img src=".assets/cgminer_GUI_Main_highlighted.png" alt="cgminer_GUI_Main_highlighted.png" width="100%" />
