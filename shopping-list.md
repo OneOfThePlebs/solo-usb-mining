@@ -47,4 +47,4 @@
 
 ---
 
-#### [Inhalt](/README.md)  ᐊ  previous | next  ᐅ  [Voraussetzungen](/requirements.md)
+#### [Content](/README.md)  ᐊ  previous | next  ᐅ  [Requirements](/requirements.md)

@@ -35,4 +35,4 @@ There you can see how the voltage can be changed.
 
 ---
 
-#### [⛏ Mining Software - Erweiterte Konfiguration](EnhancedConfiguration.md)  ᐊ  previous | next  ᐅ  [⛏⛏ Mehrere Miner betreiben](multiple-usb-miner.md)
+#### [⛏ Mining Software - Advanced Configuration](EnhancedConfiguration.md)  ᐊ  previous | next  ᐅ  [⛏⛏ Run Multiple Miners](multiple-usb-miner.md)

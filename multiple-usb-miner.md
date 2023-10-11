@@ -42,4 +42,4 @@ As an alternative to the jumper above, you can also order a switch for the 20- o
 
 ---
 
-#### [⛏ Miner Einstellungen MHz/ mV](miner-settings.md)  ᐊ  previous | next  ᐅ  [🌩 Übertakten](/uebertakten.md)
+#### [⛏ Miner Settings MHz/ mV](miner-settings.md)  ᐊ  previous | next  ᐅ  [🌩 Overclocking](/uebertakten.md)

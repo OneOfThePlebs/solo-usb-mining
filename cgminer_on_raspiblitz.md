@@ -120,4 +120,4 @@ and then (hopefully without any further errors) configure and compile (`autogen.
 
 ---
 
-#### [Raspberry Pi vorbereiten](/prepare_pi.md)  ᐊ  previous | next  ᐅ  [Mining Software starten](start_mining.md)
+#### [Prepare Raspberry Pi](/prepare_pi.md)  ᐊ  previous | next  ᐅ  [Start Mining Software](start_mining.md)

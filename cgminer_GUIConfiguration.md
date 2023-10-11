@@ -61,4 +61,4 @@ The priority indicates which pool should be mined first in the event of an error
 
 ---
 
-####  [⛏ Mining Software starten](start_mining.md)  ᐊ  previous | next  ᐅ  [Mining Software - Erweiterte Konfiguration](EnhancedConfiguration.md)
+####  [⛏ Start Mining Software](start_mining.md)  ᐊ  previous | next  ᐅ  [Mining Software - Advanced Configuration](EnhancedConfiguration.md)

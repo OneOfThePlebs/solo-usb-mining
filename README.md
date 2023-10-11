@@ -77,4 +77,4 @@ You can donate to the project and ensure that it continues to be documented and 
 
 ---
 
-####    [Inhalt](/README.md)  ᐊ  previous | next  ᐅ  [Einkaufsliste](/shopping-list.md)
+####    [Content](/README.md)  ᐊ  previous | next  ᐅ  [Shopping List](/shopping-list.md)

@@ -21,4 +21,4 @@
 
 ---
 
-#### [Miner Einstellungen MHz/ mV](miner-settings.md)  ᐊ  previous | Inhalt  ᐅ  [Inhalt](/README.md)
+#### [Miner Settings MHz/ mV](miner-settings.md)  ᐊ  previous | next  ᐅ  [Content](/README.md)

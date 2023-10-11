@@ -68,4 +68,4 @@ Product: 'NewPac Bitcoin Miner'
 
 ---
 
-#### [Installation von cgminer auf dem RaspiBlitz](cgminer_on_raspiblitz.md)  ᐊ  previous | next  ᐅ  [Mining Software starten](start_mining.md)
+#### [Installation of cgminer on the RaspiBlitz](cgminer_on_raspiblitz.md)  ᐊ  previous | next  ᐅ  [Start Mining Software](start_mining.md)

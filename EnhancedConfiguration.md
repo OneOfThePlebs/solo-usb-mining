@@ -195,4 +195,4 @@ The use of the config file has the further charm that one does not have to pass 
 
 ---
 
-####  [⛏ Mining Software - GUI Konfiguration](cgminer_GUIConfiguration.md)  ᐊ  previous | next  ᐅ  [⛏ Miner Einstellungen MHz/ mV](miner-settings.md)
+####  [⛏ Mining Software - GUI Configuration](cgminer_GUIConfiguration.md)  ᐊ  previous | next  ᐅ  [⛏ Miner Settings MHz/ mV](miner-settings.md)

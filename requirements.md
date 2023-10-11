@@ -13,4 +13,4 @@ The following describes the way to prepare the Raspberry Pi for mining and start
 
 ---
 
-#### [Einkaufsliste](/shopping-list.md)  ᐊ  previous | next  ᐅ  [Raspberry Pi vorbereiten](/prepare_pi.md)
+#### [Shopping List](/shopping-list.md)  ᐊ  previous | next  ᐅ  [Prepare Raspberry Pi](/prepare_pi.md)

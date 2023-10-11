@@ -106,4 +106,4 @@ From now on the R909 will be controlled remotely. To try out the syntax in cron,
 
 ---
 
-#### [💡 Bildergalerie](Galerie.md)  ᐊ  previous | next  ᐅ  [💡 PV/HomeAssistent/InfoTicker etc.](additional-links.md)
+#### [💡 Picture Gallery](Galerie.md)  ᐊ  previous | next  ᐅ  [💡 PV/HomeAssistent/InfoTicker etc.](additional-links.md)

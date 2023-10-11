@@ -134,4 +134,4 @@ If you want to control the miners differently, you should first determine by tri
 
 ---
 
-####  [Mining Software installieren](/install_miner.md)  ᐊ  previous | next  ᐅ  [⛏ Mining Software - GUI Konfiguration](cgminer_GUIConfiguration.md)
+####  [Install Mining Software](/install_miner.md)  ᐊ  previous | next  ᐅ  [⛏ Mining Software - GUI Configuration](cgminer_GUIConfiguration.md)

@@ -14,4 +14,4 @@
 
 ---
 
-#### [⚙️ miner-php](/miner-php.md)  ᐊ  previous | next  ᐅ  [💡 Bildergalerie](Galerie.md)
+#### [⚙️ miner-php](/miner-php.md)  ᐊ  previous | next  ᐅ  [💡 Picture Gallery](Galerie.md)

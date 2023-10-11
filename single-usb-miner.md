@@ -24,4 +24,4 @@ When the USB tester is plugged in, we see the applied voltage (in volts), the cu
 
 Active (with power supply) standard USB hubs with a Gekkoscience Compaq F can be extremely different. I've seen clock speeds from 270MHz to 545MHz depending on the USB hub used.
 
-> :warning: **WAARNING**: Higher clock speeds require active cooling (see also chapter [uebertakten.md](uebertakten.md "mention")).
+> :warning: **WAARNING**: Higher clock speeds require active cooling (see also chapter [Overclocking.md](uebertakten.md "mention")).

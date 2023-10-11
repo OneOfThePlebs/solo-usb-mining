@@ -40,4 +40,4 @@
 
 ---
 
-#### [❄ Troubleshooting](/troubleshooting.md)  ᐊ  previous | next  ᐅ  [💡 Hilfreiche Kommandos für erleichterte Bedienung unter Linux/Raspberry Pi](LinuxCommands.md)
+#### [❄ Troubleshooting](/troubleshooting.md)  ᐊ  previous | next  ᐅ  [💡 Helpful commands for easier operation under Linux/Raspberry Pi](LinuxCommands.md)

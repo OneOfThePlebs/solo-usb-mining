@@ -46,4 +46,4 @@ Checking the cooling is already a bigger challenge here. Ideally, this can be ch
 
 ---
 
-#### [⛏⛏ Mehrere Miner betreiben](multiple-usb-miner.md)  ᐊ  previous | next  ᐅ  [⚙️ R909](R909.md)
+#### [⛏⛏ Run Multiple Miners](multiple-usb-miner.md)  ᐊ  previous | next  ᐅ  [⚙️ R909](R909.md)
