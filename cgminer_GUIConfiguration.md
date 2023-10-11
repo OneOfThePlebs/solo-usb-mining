@@ -1,39 +1,37 @@
 # Cgminer GUI
 
-Die unten genannten Erklärungen beruhen auf Erfahrungswerten, Dokumentation und Dialogen mit Entwicklern und Anwendern des cgminers. Daher können Details lückenhaft und/oder fehlerhaft beschrieben sein. Wenn es Dinge gibt die richtig gestellt oder ergänzt werden sollen, bitte ich um genau diese Rückmeldung.
-
 The explanations below are based on experience, documentation and dialogs with developers and users of the cgminer. Therefore details may be incomplete and/or incorrectly described. If there are things that should be corrected or added, I ask for exactly this feedback.
 
 ## GUI - Main menu
 
 <img src=".assets/cgminer_GUI_Main_highlighted.png" alt="cgminer_GUI_Main_highlighted.png" width="100%" />
 
-Das Hauptmenü zeigt folgende Daten (siehe das Äquivalent in den roten Kästchen im obigen Screenshot):
+The main menu shows the following data (see the equivalent in the red boxes in the screenshot above):
 
-Äquivalent im Screenshot | Beschreibung
+Equivalent in screenshot | Description
 -------------------------|-------------
-`(avg):1.511TH/s` | Die gemittelte Hashleistung seit Start der Mining-Software bzw. seit dem letzten Reset der Statistiken
-`A:167502850` | Anzahl der akzeptiereten Shares (`a`ccepted)
-`R:116442` | Anzahl der abgelehnten Shares (`r`ejected)
-`HW:80256` | Anzahl der Hardware-Fehler
-`1: GSF 10070001: BM1397:06+` | Miner auf Slot `1` mit der Seriennummer `10070001` mi6 `6` ASICS des Chipsatzes `BM1397`
-`450.00MHz T:450 P:450` | ASIC-Frequenz und Target-Frequenz
-`(2:2)` | Geschwindigkeit mit der Shares an die ASICs geleitet werden in ms
-`100% WU: 83%` | Effizienzindikator `WU` ist die Anzahl der Work Units, also die shares pro minute (accepted vs rejected)
+`(avg):1.511TH/s` | The averaged hash performance since the start of the mining software or since the last reset of the statistics.
+`A:167502850` | Number of shares accepted (`a`ccepted)
+`R:116442` | Number of shares rejected (`r`ejected)
+`HW:80256` | Number of Hardware-Errors
+`1: GSF 10070001: BM1397:06+` | Miner on slot `1` with serial number `10070001` mi6 `6` ASICS of chipset `BM1397`.
+`450.00MHz T:450 P:450` | ASIC-Frequency and Target-Frequency
+`(2:2)` | Speed with which shares are routed to the ASICs in ms
+`100% WU: 83%` | Efficiency indicator `WU` is the number of work units, i.e. shares per minute (accepted vs. rejected).
 
 ## GUI - Sub menues
 
-Vom Haupmenü aus gelangt man durch Drücken der Taste für den jeweiligen Buchstaben in weitere Untermenüs zur erweiterten Anzeige von Daten bzw. zur weiteren Konfiguration.
+From the main menu, pressing the key for the respective letter takes you to further submenus for extended display of data or for further configuration.
 
-Tastatur-Shortcut | Beschreibung
+Keyboard-Shortcut | Description
 ------------------|-------------
 `U` | (`U`)SB management 
-`P` | (`P`)ool management: Hier können Pools hinzugefügt oder gelöscht werden, sowie Quotas und Prioritäten verwaltet werden.
-`S` | (`S`)ettings: Reset der Mining-Software und Schreiben einer Config-Datei
-`D` | (`D`)isplay: Erweitern und Reduzieren der eingeblendeten Informationen.
+`P` | (`P`)ool management: Pools can be added or deleted here, and quotas and priorities can be managed.
+`S` | (`S`)ettings: Reset the mining software and write a config file.
+`D` | (`D`)isplay: Expand and reduce the information displayed.
 `Q` | (`Q`)uit cgminer, close process
 
-Die (für mich) relevantesten Shortcuts habe ich in den Screenshots farbig markiert.
+I have marked the (for me) most relevant shortcuts in color in the screenshots.
 
 ### (`U`)SB management
 
@@ -43,23 +41,23 @@ Die (für mich) relevantesten Shortcuts habe ich in den Screenshots farbig marki
 
 <img src=".assets/cgminer_GUI_Pool_highlighted.png" alt="cgminer_GUI_Pool_highlighted.png" width="100%" />
 
-Sehr hilfreiches Menü zusammen mit dem (`S`)ettings-Menü um mehrere Pools anzulegen, Quotas und Prioritäten festzulegen und diese dann direkt in die Config-Datei zu schreiben. Die Quotas können beliebig gewählt werden, beispielhaft ist ein Quota von Pool1 zu Pool2 von `3:1` gleich zu `75:25` (wenn man es lieber in % ausdrücken möchte).
+Very useful menu together with the (`S`)ettings menu to create multiple pools, set quotas and priorities and then write them directly to the config file. The quotas can be chosen arbitrarily, for example a quota from pool1 to pool2 of `3:1` is equal to `75:25` (if you prefer to express it in %).
 
-Die Priorität gibt an auf welchen Pool im Fehlerfall zuerst gemint werden soll.
+The priority indicates which pool should be mined first in the event of an error.
 
 ### (`S`)ettings
 
 <img src=".assets/cgminer_GUI_Settings_highlighted.png" alt="cgminer_GUI_Settings_highlighted.png" width="100%" />
 
-(`W`)rite config file: Erstellen/Überschreiben der Konfigurationsdatei
+(`W`)rite config file: Create/overwrite the configuration file
 
-(`C`)gminer restart: Reset der Mining-Software und Rücksetzen der Statistiken. Durch den Reset wird auch die Nummerierung der Miner rückgesetzt, dies muss bei manchen API-calls berücksichtigt werden.
+(`C`)gminer restart: Reset the mining software and reset the statistics. The reset also resets the numbering of the miners, this must be taken into account for some API calls.
 
 ### (`D`)isplay
 
 <img src=".assets/cgminer_GUI_Display_highlighted.png" alt="cgminer_GUI_Display_highlighted.png" width="100%" />
 
-(`Z`)ero statistics: Rücksetzen der Statistiken bietet sich an bei Neukonfiguration des Miners, so dass z.B. alle gemittelten Werte neu berechnet werden.
+(`Z`)ero statistics: Resetting the statistics is useful when reconfiguring the miner so that, for example, all averaged values are recalculated.
 
 ---
 
