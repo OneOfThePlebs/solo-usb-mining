@@ -12,7 +12,7 @@
 
 ## Installation
 
-* [☀ Prepare Raspberry Pi](prepare_pi.md) bzw. [Installing cgminer on the RaspiBlitz](cgminer_on_raspiblitz.md)
+* [☀ Prepare Raspberry Pi](prepare_pi.md) or [Installing cgminer on the RaspiBlitz](cgminer_on_raspiblitz.md)
 * [☀ Install mining software](install_miner.md)
 
 ## Configuration
