@@ -114,7 +114,7 @@ Call worker address (without login, ideal for solo-mining-pools): https://kano.i
 
 If several Gekko Miners are operated at the same time, but they are to be controlled differently, then this can be done as follows:
 
-Find out `bus number` and `device number:
+Find out `bus number` and `device number`:
 
 ```console
 lsusb
