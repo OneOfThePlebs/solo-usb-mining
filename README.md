@@ -31,7 +31,7 @@
 
 ## Weitere Links
 
-* [💡 German Version](https://github.com/gunther0815/solo-usb-mining)
+* [💡 German Version of this documentation](https://github.com/gunther0815/solo-usb-mining)
 * [💡 Image gallery](/Galerie.md): "When Plebs Go Wild"
 * [💡 Helpful commands for easier operation under Linux/Raspberry Pi](LinuxCommands.md)
 * [💡 PV/HomeAssistent/InfoTicker etc.](additional-links.md)
