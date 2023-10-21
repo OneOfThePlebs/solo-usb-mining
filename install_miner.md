@@ -22,6 +22,9 @@ Perform updates:
 
 ```console
 sudo apt-get update 
+```
+
+```console 
 sudo apt-get upgrade -y
 ```
 
@@ -39,11 +42,25 @@ git clone https://github.com/kanoi/cgminer.git
 cd cgminer
 ```
 
+```console
+git clone https://github.com/kanoi/cgminer.git
+```
+
+```console
+cd cgminer
+```
+
 After successful cloning from GIT, the CGMiner can now be compiled:
 
 ```console
 ./autogen.sh
+```
+
+```console
 CFLAGS="-O2 -Wall -march=native -fcommon" ./configure --enable-gekko
+```
+
+```console
 sudo make
 ```
 
