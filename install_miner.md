@@ -38,8 +38,6 @@ Now the CGMiner branch can be cloned from GIT:
 
 ```console
 mkdir -p mining; cd mining 
-git clone https://github.com/kanoi/cgminer.git
-cd cgminer
 ```
 
 ```console
